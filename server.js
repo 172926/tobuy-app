@@ -24,3 +24,21 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+/*
+
+												MYSQL CONNECTION
+
+*/
+var connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'root',
+	password: '',
+	database: 'tobuy'
+});
+connection.connect(function(err){
+	if(!err){
+		console.log("Connected");
+	}else{
+		console.log("Connection error");
+	}
+});
