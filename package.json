@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "mongodb": "^2.2.26"
+  },
+  "name": "tobuy",
+  "description": "Shopping application",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexomel/tobuy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexomel/tobuy/issues"
+  },
+  "homepage": "https://github.com/alexomel/tobuy#readme"
+}
