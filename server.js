@@ -68,18 +68,21 @@ connection.connect(function(err){
 app.post('/getId', urlencodedParser, function(req, res){
 	var email = JSON.stringify(req.body.email);
 	var data = [];
-	//console.log(email);
-	connection.query("SELECT id FROM users WHERE email=" + email, function(err,rows,fields){
-		if(err){
-			console.log(err);
-		}
-		
-		values = JSON.parse(JSON.stringify(rows));
-		data.push(values[0].id);
-		res.send(data);
-		res.end();
-		
-	})
+	
+	//if(req.body.email === 'null'){
+	//	res.end();
+	//}else{
+		connection.query("SELECT id FROM users WHERE email=" + email, function(err,rows,fields){
+			
+			try{	
+				values = JSON.parse(JSON.stringify(rows));
+				data.push(values[0].id);
+				res.send(data);
+			}catch(err){
+				res.status(400).send(err);
+			}
+		});
+//}
 	
 	
 })
@@ -95,10 +98,12 @@ app.post('/listgroups', urlencodedParser, function(req, res){
 	var ids = [];
 	var id = req.body.id;
 	//console.log(id);
+	//if(req.body.id === 'undefined'){
+	//	res.end();
+	//}else{
 	connection.query("SELECT group_name, group_id FROM group_members WHERE user_id=" + id, function(err, rows, fields){ // cahnge user ID
 		
-		
-		
+		try{
 		values = JSON.parse(JSON.stringify(rows));
 		
 		//console.log(values); ////////
@@ -115,9 +120,12 @@ app.post('/listgroups', urlencodedParser, function(req, res){
 		}
 		//console.log(groups);
 		res.send(groups);
-		res.end();
+		
+		}catch(err){
+			res.status(400).send(err);
+		}
 	})
-	
+	//}
 })
 
 /*
@@ -156,6 +164,9 @@ var groupName = req.body.groupName;
 		
 	});
 	connection.query("DELETE FROM group_members WHERE group_id="+group_id+" AND user_id="+id+"", function(err,rows,fields){
+		
+	});
+	connection.query("DELETE FROM lists WHERE group_id="+group_id+"", function(err,rows,fields){
 		
 	});
 	res.end();
@@ -254,7 +265,7 @@ app.post('/addList', urlencodedParser, function(req, res){
 app.post('/listListsGroups', urlencodedParser, function(req, res){
 	
 	var group_id = req.body.group_id;	
-
+	console.log("Get lists");
 	connection.query("SELECT list_name FROM lists WHERE group_id="+group_id+"", function(err, rows, fields){
 		
 		values = JSON.parse(JSON.stringify(rows));
@@ -311,4 +322,14 @@ app.post('/deleteList', urlencodedParser, function(req, res){
 		res.end();
 	});
 	
+});
+
+app.post('/submitList', urlencodedParser, function(req, res){
+	
+	var item_data = req.body.item_data;
+	
+	connection.query("INSERT INTO list_items(list_id, item_content) VALUES(1, '"+item_data+"')", function(err, rows, fields){
+
+	});
+	res.end();
 });
