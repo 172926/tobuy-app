@@ -42,3 +42,28 @@ connection.connect(function(err){
 		console.log("Connection error");
 	}
 });
+
+/*
+
+												REQUESTS FROM UI
+
+*/
+
+app.post('/getId', urlencodedParser, function(req, res){
+	var email = JSON.stringify(req.body.email);
+	var data = [];
+	//console.log(email);
+	connection.query("SELECT id FROM users WHERE email=" + email, function(err,rows,fields){
+		if(err){
+			console.log(err);
+		}
+		
+		values = JSON.parse(JSON.stringify(rows));
+		data.push(values[0].id);
+		res.send(data);
+		res.end();
+		
+	})
+	
+	
+})
