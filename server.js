@@ -45,7 +45,7 @@ connection.connect(function(err){
 
 /*
 
-												REQUESTS FROM UI
+												GET USER ID BY EMAIL
 
 */
 
@@ -65,5 +65,41 @@ app.post('/getId', urlencodedParser, function(req, res){
 		
 	})
 	
+	
+})
+
+/*
+
+												LIST GROUPS ON MAIN PAGE
+
+*/
+
+app.post('/listgroups', urlencodedParser, function(req, res){
+	var groups = [];
+	var ids = [];
+	var id = req.body.id;
+	//console.log(id);
+	connection.query("SELECT group_name, group_id FROM group_members WHERE user_id=" + id, function(err, rows, fields){ // cahnge user ID
+		
+		
+		
+		values = JSON.parse(JSON.stringify(rows));
+		
+		//console.log(values); ////////
+ 		
+		for(var i = 0; i < values.length; i++){
+			groups.push(values[i].group_name);
+			//ids.push(va);
+			//groups.push();
+		}
+		for(var i = 0; i < values.length; i++){
+			groups.push(values[i].group_id);
+			//ids.push(va);
+			//groups.push();
+		}
+		//console.log(groups);
+		res.send(groups);
+		res.end();
+	})
 	
 })
