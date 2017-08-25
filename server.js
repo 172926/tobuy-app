@@ -210,4 +210,40 @@ app.post('/deleteUser', urlencodedParser, function(req, res){
 		res.end();
 	});
 	
-})
+});
+
+/*
+
+												CREATE LIST REQUEST
+
+*/
+
+app.post('/addList', urlencodedParser, function(req, res){
+	
+	var list_name = req.body.list_name;
+	var group_id = req.body.group_id;	
+	//console.log(list_name, group_id);
+	connection.query("INSERT INTO lists(list_name, group_id) VALUES('"+list_name+"', "+group_id+")", function(err,rows,fields){
+		
+	});
+	res.end();
+	
+});
+
+/*
+
+												LIST LISTS INSIDE GROUP
+
+*/
+app.post('/listListsGroups', urlencodedParser, function(req, res){
+	
+	var group_id = req.body.group_id;	
+
+	connection.query("SELECT list_name FROM lists WHERE group_id="+group_id+"", function(err, rows, fields){
+		
+		values = JSON.parse(JSON.stringify(rows));
+		res.send(values);
+
+	});
+	
+});
