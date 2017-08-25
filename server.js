@@ -9,6 +9,22 @@ var url = require('url');
 
 /*
 
+												FIREBASE INIT
+
+*/
+
+var config = {
+    apiKey: "AIzaSyAY1t4H9D3PUeu4j6_odxV1xQ5MAhS_S9Q",
+    authDomain: "tobuy-68833.firebaseapp.com",
+    databaseURL: "https://tobuy-68833.firebaseio.com",
+    projectId: "tobuy-68833",
+    storageBucket: "tobuy-68833.appspot.com",
+    messagingSenderId: "1092640222732"
+};
+firebase.initializeApp(config);
+
+/*
+
 												START SERVER
 
 */
@@ -278,4 +294,21 @@ app.post('/getLists', urlencodedParser, function(req, res){
 		
 	});
 
+});
+
+/*
+
+												DELETE LIST REQUEST
+
+*/
+
+app.post('/deleteList', urlencodedParser, function(req, res){
+
+	var list_id = req.body.list_id;
+	//console.log(list_id)
+	connection.query("DELETE FROM lists WHERE id="+list_id+"", function(err, rows, fields){
+		values = JSON.parse(JSON.stringify(rows));
+		res.end();
+	});
+	
 });
