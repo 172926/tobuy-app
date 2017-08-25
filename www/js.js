@@ -18,6 +18,40 @@ $.ajax({
 });
 }
 
+$.ajax({
+	url: ipaddr + '/listgroups',
+	type: 'POST',
+	data: {"id" : localStorage.id},
+	async: true,
+	success: function(data){
+		for (var i = 0; i < data.length / 2; i++) {
+            var nextId = i;
+            nextId++;
+            var content = "<div data-role='collapsible' data-theme='a' data-content-theme='a' id='group" + nextId + "'>" +
+                "<h2>" + data[i] + "</h2>" +
+                "<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
+                "<h3>users:</h3>" +
+				"<span id='users"+i+"'/>"+
+                "</ul>" +
+				"<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
+                "<h3>lists:</h3>" +
+				"<span id='lists"+i+"'/>"+
+                "</ul>" +
+                "<div class='ui-grid-a'>" + "<div class='ui-block-a'>" +
+                "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Add User</a>" + "</div>" +
+                "<div class='ui-block-b'>" +
+                "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-usr-del' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Delete user</a>" + "</div>" +
+                "<br />" + "<div class='ui-block-a'>" +
+                "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-list' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Create list</a>" + "</div>" +
+                "<div class='ui-block-b'>" +
+                "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
+                "</div>" + "</div>";
+			$("#setGroup").append(content).collapsibleset('refresh');
+
+		}
+	},
+	error: function(e){alert(e.message)}
+});
 
 //Button create group
 $('#create-group').click(function() {
