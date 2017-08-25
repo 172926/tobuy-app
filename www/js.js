@@ -17,3 +17,10 @@ $.ajax({
 	}
 });
 }
+
+$("#btn-logout").click(function() {
+
+	localStorage.clear();
+	location.reload();
+
+});
