@@ -47,7 +47,22 @@ $.ajax({
                 "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
                 "</div>" + "</div>";
 			$("#setGroup").append(content).collapsibleset('refresh');
+		
+			$('.btn-delete').click(function() {
+		//alert($(this).attr("data-group"));
+			$.ajax({
+				url: ipaddr + '/deleteGroup',
+				type: 'POST',
+				async: false,
+				data: {"groupName" : this.id, "id" : localStorage.id, "group_id" : $(this).attr("data-group")},
+				success: function(data){
 
+				},
+				error: function(e){alert(e.message)}
+			});
+			location.reload();
+		});
+		
 		}
 	},
 	error: function(e){alert(e.message)}
