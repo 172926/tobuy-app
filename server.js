@@ -174,3 +174,40 @@ app.post('/addUser', urlencodedParser, function(req, res){
 	res.end();
 });
 
+/*
+
+												LIST USERS INSIDE GROUP
+
+*/
+
+app.post('/listUsers', urlencodedParser, function(req, res){
+	
+	var group_id = req.body.group_id;
+	//console.log(group_id);
+	connection.query("SELECT email, id FROM users WHERE id IN (SELECT user_id FROM group_members WHERE group_id="+group_id+")", function(err, rows, fields){
+		
+		values = JSON.parse(JSON.stringify(rows));
+		//console.log(values);
+		res.send(values);
+		
+//res.end();
+	});
+	
+});
+
+/*
+
+												DELETE USER REQUEST
+
+*/
+
+app.post('/deleteUser', urlencodedParser, function(req, res){
+	
+	var user_id = req.body.user_id;
+	var group_id = req.body.group_id;	
+	//console.log(user_id, group_id);
+	connection.query("DELETE FROM group_members WHERE user_id="+user_id+" AND group_id="+group_id+"", function(err,rows,fields){
+		res.end();
+	});
+	
+})
