@@ -145,5 +145,32 @@ var groupName = req.body.groupName;
 	res.end();
 });
 
+/*
 
+												ADD USER TO GROUP REQUEST
+
+*/
+
+app.post('/addUser', urlencodedParser, function(req, res){
+	var groupName = req.body.groupName;
+	var id = req.body.id;
+	var userEmail = req.body.userEmail;
+	var group_id;
+	//console.log(groupName + id + userEmail);
+	
+	connection.query("SELECT id FROM groups WHERE group_name='"+groupName+"' AND group_owner_id="+id+"",function(err,rows,fields){
+		
+		values = JSON.parse(JSON.stringify(rows));
+		group_id = values[0].id;
+		//console.log("group id = " + group_id);
+		
+		connection.query("INSERT INTO group_members (group_id, group_name, user_id) VALUES ("+group_id+", '"+groupName+"', (SELECT id FROM users WHERE email='"+userEmail+"'))",function(err,rows,fields){
+		//console.log("group issd = " + group_id);
+		
+		
+		})
+	})
+	
+	res.end();
+});
 
