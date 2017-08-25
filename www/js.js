@@ -157,7 +157,7 @@ $('#create-group').click(function() {
 
 	var groupName = prompt("Enter the group name: ");
 	
-	if(groupName == ""){
+	if(groupName == "" || groupName == undefined){
 		alert("Field cannot be empty!");
 	}else{
 		$.ajax({
