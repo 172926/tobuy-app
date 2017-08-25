@@ -103,3 +103,47 @@ app.post('/listgroups', urlencodedParser, function(req, res){
 	})
 	
 })
+
+/*
+
+												CREATE GROUP REQUEST
+
+*/
+
+app.post('/createGroup', urlencodedParser, function(req, res){
+	
+	var groupName = req.body.groupName;
+	var id = req.body.id;
+	console.log(groupName);
+	connection.query("INSERT INTO groups(group_name, group_owner_id) VALUES('"+groupName+"', "+id+")", function(err,rows,fields){
+		
+	});
+	connection.query("INSERT INTO group_members(group_id, group_name, user_id) VALUES(LAST_INSERT_ID(), '"+groupName+"', "+id+")", function(err,rows,fields){
+		
+	});
+	res.end();
+	
+});
+
+
+/*
+
+												DELETE GROUP REQUEST
+
+*/
+
+app.post('/deleteGroup', urlencodedParser, function(req, res) {
+var groupName = req.body.groupName;
+	var id = req.body.id;
+	var group_id = req.body.group_id;
+	connection.query("DELETE FROM groups WHERE id="+group_id+" AND group_owner_id="+id+"", function(err,rows,fields){
+		
+	});
+	connection.query("DELETE FROM group_members WHERE group_id="+group_id+" AND user_id="+id+"", function(err,rows,fields){
+		
+	});
+	res.end();
+});
+
+
+
