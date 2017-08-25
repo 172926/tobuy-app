@@ -37,7 +37,9 @@ $.ajax({
 	error: function(e){}
 });
 
-
+$('.btn-add-list').click(function() {
+	window.location.href="list-form.html";
+});
 
 $("#btn-logout").click(function() {
 

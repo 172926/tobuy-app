@@ -1,6 +1,6 @@
 var ipaddr = 'http://192.168.0.102:8081';
 
-if(localStorage.email === undefined || localStorage.email == ''){
+while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
 	localStorage.email = prompt("Provide user email:");
 
 	$.ajax({
@@ -11,7 +11,9 @@ if(localStorage.email === undefined || localStorage.email == ''){
 		success: function(data){
 			localStorage.id = data[0];
 		},
-		error: function(e){}
+		error: function(e){
+			alert("User doesn't exist")
+		}
 	});
 }
 
@@ -138,6 +140,10 @@ $.ajax({
 			
 			$('.btn-add-list').click(function() {
 				var list_name = prompt("Enter the list name: ");
+				
+				if(list_name == "" || list_name == undefined){
+					alert("Field cannot be empty!");
+				}else{
 				$.ajax({
 					url: ipaddr + '/addList',
 					type: 'POST',
@@ -147,10 +153,11 @@ $.ajax({
 					error: function(e){alert(e.message)}
 				});
 				location.reload();
+				}
 			});
 		}
 	},
-	error: function(e){alert(e.message)}
+	error: function(e){}
 });
 
 $('#create-group').click(function() {
