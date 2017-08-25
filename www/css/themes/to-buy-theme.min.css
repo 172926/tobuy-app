@@ -21,9 +21,7 @@ input,
 select,
 textarea,
 button,
-.btn-group {
-	width: 80%;
-}
+
 .ui-btn {
 	font-size: 1em;
 	line-height: 1.3;
