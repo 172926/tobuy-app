@@ -106,7 +106,7 @@ $.ajax({
 			$.ajax({
 				type: "POST",
 				url: ipaddr+'/listListsGroups',
-				data: ({group_id: group_id}),
+				data: ({group_id: data[i + (data.length / 2)]}),
 				dataType: "json",
 				async: true,
 				success: function(data){
