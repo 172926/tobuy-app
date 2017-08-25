@@ -247,3 +247,35 @@ app.post('/listListsGroups', urlencodedParser, function(req, res){
 	});
 	
 });
+
+/*
+
+												GET LISTS ON LIST PAGE
+
+*/
+
+app.post('/getLists', urlencodedParser, function(req, res){
+	
+	var user_id = req.body.user_id;
+	var lists = [];
+	connection.query("SELECT list_name, lists.id, group_members.group_name FROM lists INNER JOIN group_members ON lists.group_id = group_members.group_id WHERE group_members.user_id="+user_id+"", function(err, rows, fields){
+		
+		values = JSON.parse(JSON.stringify(rows));
+		
+		// Get list name
+		for(var i = 0; i < values.length; i++){
+			lists.push(values[i].list_name);
+		}
+		// Get list id
+		for(var i = 0; i < values.length; i++){
+			lists.push(values[i].id);
+		}
+		// Get group name for which list is related
+		for(var i = 0; i < values.length; i++){
+			lists.push(values[i].group_name);
+		}
+		res.send(lists);
+		
+	});
+
+});
