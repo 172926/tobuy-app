@@ -48,8 +48,8 @@ app.use(function(req, res, next) {
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: '',
-	database: 'tobuy'
+	password: 'tobuyapprootpasswd',
+	database: 'tobuyapp'
 });
 connection.connect(function(err){
 	if(!err){
