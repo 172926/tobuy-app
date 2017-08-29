@@ -1,4 +1,4 @@
-var ipaddr = 'http://54.226.242.116:8081';
+var ipaddr = 'http://192.168.0.101:8081';
 
 while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
 	localStorage.email = prompt("Provide user email:");

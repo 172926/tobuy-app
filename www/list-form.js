@@ -2,7 +2,9 @@
 
 var counter = 0;
 
-var ipaddr = 'http://54.226.242.116:8081';
+var data_counter = 0;
+
+var ipaddr = 'http://192.168.0.101:8081';
 
 
 if(localStorage.list_id){
@@ -25,10 +27,13 @@ if(localStorage.list_id){
 						"<input type='checkbox' checked disabled />"
 						$("#form").append(content);
 					}else{
-						var content2 = "<div id='item-"+counter+"'><input type='textfield' value='"+data[i].item_content+"' disabled />"+
+						var content2 = "<div id='item-"+counter+"'><input type='textfield' id='data-"+data_counter+"' value='"+data[i].item_content+"' disabled />"+
 						"</div>" + 
-						"<input type='checkbox' id='item-active-"+counter+"' value="+data[i].id+" />"
+						"<input type='checkbox' id='item-active-"+counter+"' value="+data[i].id+"  />"
 						$("#form").append(content2);
+						
+						counter++;
+					data_counter++;
 					}
 					//var content = "<div id='item-"+counter+"'><input type='textfield' id='data-"+counter+"' value='"+data[i].item_content+"' disabled />" + 
 					//"</div>" + 
@@ -36,7 +41,7 @@ if(localStorage.list_id){
 					//"<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='item-"+counter+"' onClick='deletion(this.id)'></a><br></div>"
 					
 					
-					//counter++;
+					
 				}
 			},
 			error: function(e){alert(e.message)}
@@ -67,15 +72,19 @@ $.ajax({
 function deletion(id){
 				var id = id;
 				var element = document.getElementById(id);
-				element.outerHTML = "";
-				delete element;
-
+				//element.style.display = "none";
+				element.firstChild.value = "";
+				element.style.display = "none";
+				//delete element;
+				
 };
 
 
-$(".btn-add-field").click(function(){	
-			var content = "<div id='item-"+counter+"'><input type='textfield' id='data-"+counter+"' /><a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='item-"+counter+"' onClick='deletion(this.id)'></a><br></div>"
+$(".btn-add-field").click(function(){
+			
+			var content = "<div id='item-"+counter+"'><input type='textfield' id='data-"+data_counter+"' /><a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='item-"+counter+"' onClick='deletion(this.id)'></a><br></div>"
 			$("#form").append(content);
+			data_counter++;
 			counter++;
 })
 
@@ -98,7 +107,9 @@ $(".btn-sbm").click(function(){
 	for(var i = 0; i < $('[id^=data-]').length; i++){	
 	
 	var check = document.getElementById('item-active-' + i);
-	if(check == null){
+
+	if(check == null || check.checked == false){
+		if($('#data-' + i).val() != 0){
 		$.ajax({
 			url: ipaddr + '/submitListItems',
 			type: 'POST',
@@ -106,16 +117,19 @@ $(".btn-sbm").click(function(){
 			data: {"item_data" : $('#data-' + i).val(), "group_id" : group_id, "list_name" : $("#listname").val()},
 			success: function(data){},
 			error: function(e){alert(e.message)}
-		});	
+		});
+		}
 	}else{
+		
 		$.ajax({
 			url: ipaddr + '/submitListItems',
 			type: 'POST',
 			async: false,
-			data: {"item_data" : $('#data-' + i).val(), "group_id" : group_id, "list_name" : $("#listname").val(), "item_active" : check.checked},
+			data: {"item_data" : $('#data-' + i).val(), "group_id" : group_id, "list_name" : $("#listname").val(), "item_id" : check.value},
 			success: function(data){},
 			error: function(e){alert(e.message)}
 		});	
+		
 	}
 	}
 	window.location.href="lists.html";
