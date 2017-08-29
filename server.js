@@ -48,8 +48,8 @@ app.use(function(req, res, next) {
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'tobuyapprootpasswd',
-	database: 'tobuyapp'
+	password: '',
+	database: 'tobuy'
 });
 connection.connect(function(err){
 	if(!err){
@@ -157,9 +157,13 @@ var groupName = req.body.groupName;
 	connection.query("DELETE FROM group_members WHERE group_id="+group_id+" AND user_id="+id+"", function(err,rows,fields){
 		
 	});
+	connection.query("DELETE FROM list_items WHERE list_id=(SELECT lists.id FROM lists WHERE lists.group_id="+group_id+")", function(err,rows,fields){
+		
+	});
 	connection.query("DELETE FROM lists WHERE group_id="+group_id+"", function(err,rows,fields){
 		
 	});
+	
 	res.end();
 });
 
@@ -364,8 +368,11 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 	
 	var item_data = req.body.item_data;
 	var group_id = req.body.group_id;
-	var list_name = req.body.list_name
+	var list_name = req.body.list_name;
+	var item_id = req.body.item_id;
 	var item_active = req.body.item_active;
+	
+	//console.log(item_id);
 	//console.log(item_data + " " + item_active);
 	
 	connection.query("SELECT item_content FROM list_items INNER JOIN lists ON list_items.list_id=lists.id WHERE list_items.list_id=(SELECT id FROM lists WHERE list_name='"+list_name+"' AND group_id="+group_id+") AND list_items.item_content='"+item_data+"'", function(err, rows, fields){
@@ -379,10 +386,8 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 				});
 			}else{
 				
-				connection.query("",function(err, rows,fields){
-					
-					
-					
+				connection.query("UPDATE list_items SET active=0 WHERE id="+item_id+"",function(err, rows,fields){
+
 				})
 				
 			}
@@ -415,9 +420,7 @@ app.post('/editList', urlencodedParser, function(req, res){
 		}
 		connection.query("SELECT list_name FROM lists WHERE id="+list_id+"", function(err, rows, fields){
 			values.push(JSON.parse(JSON.stringify(rows)));
-			//console.log(list_id);
-			//console.log(values);
-			//console.log(values);
+
 			res.send(values);
 		});
 		
