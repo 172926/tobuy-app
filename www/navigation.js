@@ -4,7 +4,7 @@ $("#home-page").click(function(){
 	window.location.href = "index.html";
 })
 $("#groups-page").click(function(){
-	window.location.href = "index.html";
+	window.location.href = "groups.html";
 })
 $("#lists-page").click(function(){
 	window.location.href = "lists.html";
