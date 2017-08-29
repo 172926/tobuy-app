@@ -49,7 +49,7 @@ var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	password: 'tobuyapprootpasswd',
-	database: 'tobuy'
+	database: 'tobuyapp'
 });
 connection.connect(function(err){
 	if(!err){
