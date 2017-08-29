@@ -1,4 +1,4 @@
-var ipaddr = 'http://192.168.0.102:8081';
+var ipaddr = 'http://192.168.0.101:8081';
 
 $.ajax({
 	url: ipaddr + '/getLists',
