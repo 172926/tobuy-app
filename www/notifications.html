@@ -25,10 +25,10 @@
             <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel" data-display="overlay" data-position="left">
                 <div class="ui-panel-inner">
                     <ul data-role="listview">
-                        <li><a class="ui-btn ui-icon-home ui-btn-icon-right ui-state-disabled" id="home-page" href="index.html">Home</a></li>
+                        <li><a class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="index.html">Home</a></li>
                         <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
                         <li><a class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
-                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
+                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right ui-state-disabled" id="notifications-page" href="notifications.html">Notifications</a></li>
                         <li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
                         <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
                     </ul>
@@ -36,7 +36,11 @@
             </div>
         </div>
         <!-- /panel -->
-        <h3>Home</h3>
+        <h3>Notifications</h3>
+        <form>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow" href="#" id="send-sms">Send sms notification</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow" href="#" id="send-mail">Send email</a>
+        </form>
         <script src="js.js"></script>
         <script src="navigation.js"></script>
         <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-theme="a" data-position="fixed">

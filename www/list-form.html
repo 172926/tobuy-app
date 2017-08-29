@@ -15,41 +15,44 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
-		<div data-role="header" data-theme="a">
+    <div data-role="page" data-theme="a">
+        <div data-role="header" data-theme="a">
             <a class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext ui-corner-all" style="border-width: 0px" href="#mypanel"></a>
             <h1>To Buy List</h1>
             <button id="btn-logout" class="ui-btn-right ui-btn-inline ui-mini">Logout</button>
-		</div>
-		<!-- /header -->
-		<div role="main" class="ui-content">
-            <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel"  data-display="overlay" data-position="left">
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel" data-display="overlay" data-position="left">
                 <div class="ui-panel-inner">
                     <ul data-role="listview">
                         <li><a class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="index.html">Home</a></li>
-                        <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="index.html">Groups</a></li>
+                        <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
                         <li><a class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
-						<li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
-						<li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="information.html">Info</a></li>
+                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
+                        <li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
                         <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-		
-	<div id='form'>
-		<p>List name:</p>
-		<input type="textfield" id="listname" /><br>
-	
-		<label for="groupname" class="select">Select group:</label>
-		<select id="group-name" name="groupname" style="">
-		</select>
-		<br>
-	</div>
-	<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-field'>Add item field</a>
-	<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-btn-icon-left ui-mini btn-sbm'>Submit</a>
-		<script src="list-form.js"></script>
-		<script src="navigation.js">
-</div>		
+
+        <div id='form'>
+            <p>List name:</p>
+            <input type="textfield" id="listname" />
+            <br>
+            <label for="groupname" class="select">Select group:</label>
+            <select id="group-name" name="groupname">
+            </select>
+            <br>
+        </div>
+        <a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-field'>Add item field</a>
+        <a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-btn-icon-left ui-mini btn-sbm'>Submit</a>
+        <script src="list-form.js"></script>
+        <script src="navigation.js"></script>
+        <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-theme="a" data-position="fixed">
+            <h1 class="ui-title" role="heading" aria-level="1"></h1>
+        </div>
 </body>
+
 </html>
