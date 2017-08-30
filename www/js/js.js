@@ -1,7 +1,7 @@
 var ipaddr = 'http://54.226.242.116:8081';
 
-while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
-	localStorage.email = prompt("Provide user email:");
+//while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
+//	localStorage.email = prompt("Provide user email:");
 
 	$.ajax({
 		url: ipaddr + '/getId',
@@ -12,10 +12,10 @@ while(localStorage.email === undefined || localStorage.email == '' || localStora
 			localStorage.id = data[0];
 		},
 		error: function(e){
-			alert("User doesn't exist")
+			//alert("User doesn't exist")
 		}
 	});
-}
+//}
 
 $.ajax({
 	url: ipaddr + '/listgroups',
