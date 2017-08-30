@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script>localStorage.theme = 'a'</script>
 </head>
 
 <body>
-    <div data-role="page">
-        <div data-role="header" data-theme="a">
-            <h1>To Buy List!</h1>
+    <div data-role="page" data-theme="a">
+        <div data-role="header">
+            <a class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext ui-corner-all" style="border-width: 0px" href="#mypanel"></a>
+            <h1>To Buy List</h1>
+            <button id="btn-logout" class="ui-btn-right ui-btn-inline ui-mini">Logout</button>
         </div>
         <!-- /header -->
         <div role="main" class="ui-content">
@@ -45,9 +46,22 @@
                 </div>
             </div>
         </div>
-        <!-- /content -->
-    </div>
-	<script src="js/js.js"></script>
+
+        <!-- /panel -->
+        <h3>Home</h3>
+
+        <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-position="fixed">
+            <h1 class="ui-title" role="heading" aria-level="1"></h1>
+        </div>
+		<script src="js.js"></script>
+        <script src="navigation.js"></script>
+		<script>	
+			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
+				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+			});
+		
+		</script>
+
 </body>
 
 </html>
