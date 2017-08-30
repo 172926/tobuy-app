@@ -1,5 +1,9 @@
 var ipaddr = 'http://54.226.242.116:8081';
 
+if(localStorage.email){
+	window.location.href = "main.html";
+}
+
 $('#btn-submit').click(function() {
 alert("started");
     $.ajax({

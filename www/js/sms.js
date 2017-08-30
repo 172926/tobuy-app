@@ -1,3 +1,26 @@
+
+var ipaddr = 'http://54.226.242.116:8081';
+
+$.ajax({
+					url: ipaddr + '/sendSms',
+					type: 'POST',
+					async: false,
+					data: {"group_id" : localStorage.group_id},
+					success: function(data){
+						
+						var numberTxt = document.getElementById('numberTxt');
+						
+						
+						for(var i = 0; i < data.length; i++){
+						
+							numberTxt.value += data[i].phone_number + ",";
+						
+						}
+					
+					},
+					error: function(e){alert(e.message)}
+				});
+
 var app = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
