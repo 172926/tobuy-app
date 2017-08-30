@@ -16,7 +16,9 @@ ARCHITECTURE
 ------------
 
       Front end: HTML, CSS, JS, Ajax, JQuery Mobile framework        Branch: master
+	  
       Middle tier: RESTful API hosted on Node.js                     Branch: api
+	  
       Back end: MySQL                                                Branch: database
 
 
@@ -26,4 +28,11 @@ INSTALLATION
 ![alt text](https://raw.githubusercontent.com/172926/tobuy-app/master/www/img/logo-android.png)
 
 Download and run instalation of application on your android device from Phonegap
+
+CONTRIBUTORS
+------------
+
+* Oleksandr Omelianenko (s175603@wizard.uek.krakow.pl)
+
+* Nikita Novikov		(s172926@wizard.uek.krakow.pl)
 
