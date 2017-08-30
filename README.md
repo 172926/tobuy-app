@@ -25,4 +25,5 @@ ARCHITECTURE
 INSTALLATION
 ------------
 
-Download and run instalation of application on your android device from Phonegap [![Build Status](https://www.google.pl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiciL340P_VAhWCXBQKHSSpDuAQjRwIBw&url=http%3A%2F%2Fwww.developerdepo.com%2F&psig=AFQjCNHKFu3u_ZqJsU9y3vSLmiErb2_qAA&ust=1504205671623402)](https://build.phonegap.com/apps/2616325/)
+Download and run instalation of application on your android device from Phonegap ![alt text](https://raw.githubusercontent.com/172926/tobuy-app/master/www/img/logo-android.png)
+
