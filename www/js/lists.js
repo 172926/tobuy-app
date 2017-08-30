@@ -11,7 +11,7 @@ $.ajax({
 		for (var i = 0; i < data.length / 3; i++) {
             var nextId = i;
             nextId++;
-            var content = "<div data-role='collapsible' data-theme='a' data-content-theme='a' id='list" + nextId + "'>" +
+            var content = "<div data-role='collapsible' data-theme='"+localStorage.theme+"' data-content-theme='"+localStorage.theme+"' id='list" + nextId + "'>" +
                 "<h2>" + data[i] + "</h2>" +
                 "<h3>Group: "+data[i + (data.length / 3)*2]+"</h3>" +
                 "<div class='ui-grid-a'>" + "<div class='ui-block-a'>" +

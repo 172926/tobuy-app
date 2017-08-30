@@ -26,7 +26,7 @@ $.ajax({
 		for (var i = 0; i < data.length / 2; i++) {
             var nextId = i;
             nextId++;
-            var content = "<div data-role='collapsible' data-theme='a' data-content-theme='a' id='group" + nextId + "'>" +
+            var content = "<div data-role='collapsible' data-theme='"+localStorage.theme+"' data-content-theme='"+localStorage.theme+"' id='group" + nextId + "'>" +
                 "<h2>" + data[i] + "</h2>" +
                 "<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
                 "<h3>users:</h3>" +
@@ -44,7 +44,6 @@ $.ajax({
                 "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
                 "</div>" + "</div>";
 			$("#setGroup").append(content).collapsibleset('refresh');
-		
 			$('.btn-delete').click(function() {
 				$.ajax({
 					url: ipaddr + '/deleteGroup',
