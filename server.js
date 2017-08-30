@@ -59,6 +59,35 @@ connection.connect(function(err){
 	}
 });
 
+
+app.post('/login',urlencodedParser, function(req, res) {
+	//console.log("login");
+	var email = req.body.txt_email;
+	var pass = req.body.txt_password;
+	const auth = firebase.auth();
+	const promise = auth.signInWithEmailAndPassword(email, pass);
+	promise.catch(e => res.send(e.message));
+	
+	firebase.auth().onAuthStateChanged(firebaseUser => {
+		if(!firebaseUser){
+			//console.log("Denied");
+			authenticated = false;
+			//res.send(authenticated);
+		}
+		if(firebaseUser){
+			//console.log("Logged");
+			authenticated = true;
+			res.send(authenticated);
+		}
+		//console.log(authenticated);
+		
+	});
+	
+	var user = firebase.auth().currentUser;
+	//console.log(user);
+});
+
+
 /*
 
 												GET USER ID BY EMAIL
@@ -182,14 +211,15 @@ app.post('/addUser', urlencodedParser, function(req, res){
 	connection.query("SELECT id FROM groups WHERE group_name='"+groupName+"' AND group_owner_id="+id+"",function(err,rows,fields){
 		try{
 		
-		values = JSON.parse(JSON.stringify(rows));
-		group_id = values[0].id;
+			values = JSON.parse(JSON.stringify(rows));
+			group_id = values[0].id;
 		
-		connection.query("INSERT INTO group_members (group_id, group_name, user_id) VALUES ("+group_id+", '"+groupName+"', (SELECT id FROM users WHERE email='"+userEmail+"'))",function(err,rows,fields){
-		});
+			connection.query("INSERT INTO group_members (group_id, group_name, user_id) VALUES ("+group_id+", '"+groupName+"', (SELECT id FROM users WHERE email='"+userEmail+"'))",function(err,rows,fields){
+			});
 		}catch(err){
 			res.status(400).send(err);
 		}
+		
 	})
 	
 	res.end();
@@ -210,7 +240,7 @@ app.post('/listUsers', urlencodedParser, function(req, res){
 			values = JSON.parse(JSON.stringify(rows));
 		}catch(err){
 			res.status(400).send(err);
-		}
+		} 
 		res.send(values);
 		
 	});
