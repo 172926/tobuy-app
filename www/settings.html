@@ -11,15 +11,12 @@
     <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script>
-		
-		
-	</script>
+    <script>
+    </script>
 </head>
 
 <body>
-
-    <div data-role="page" data-theme="a" >
+    <div data-role="page" data-theme="a">
         <div data-role="header">
             <a class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext ui-corner-all" style="border-width: 0px" href="#mypanel"></a>
             <h1>To Buy List</h1>
@@ -36,57 +33,63 @@
                         <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
                         <li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
                         <li><a class="ui-btn ui-icon-gear ui-btn-icon-right ui-state-disabled" id="settings-page" href="settings.html">Settings</a></li>
-						<li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
+                        <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- /panel -->
         <h3>Settings</h3>
-		<form>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Choose theme a</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Choose theme b</a>
-			<a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Choose theme c</a>
+        <form>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Ocean breeze</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Cookie</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Dark night</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Default</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Malachite</a>
+            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Lolipop</a>
         </form>
-		<script>
-			
-			$(".btn-theme").click(function(){
-			
-				var text = $(this).text();
-				switch(text){
-					case 'Ocean breeze' : localStorage.theme = 'a';
-					break;
-					case 'Cookie' : localStorage.theme = 'b';
-					break;
-					case 'Dark night' : localStorage.theme = 'c';
-					break;
-                    case 'Default' : localStorage.theme = 'd';
-                    break;
-                    case 'Malachite' : localStorage.theme = 'e';
-                    break;
-                    case 'Lolipop' : localStorage.theme = 'f';
-                    break;
-					default : localStorage.theme = 'd';
-				
-				}
-				
-				//var doc = document.querySelector('[data-theme]');
-				//doc.attr();
-				//alert(doc.getAttribute('data-theme'));
-				//$(doc).attr('data-theme', localStorage.theme);
-				location.reload();
-			})
-		//<script>	
-			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
-				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
-			});
-		
-		</script>
+        <script>
+        $(".btn-theme").click(function() {
 
+            var text = $(this).text();
+            switch (text) {
+                case 'Choose theme a':
+                    localStorage.theme = 'a';
+                    break;
+                case 'Choose theme b':
+                    localStorage.theme = 'b';
+                    break;
+                case 'Choose theme c':
+                    localStorage.theme = 'c';
+                    break;
+                case 'Choose theme d':
+                    localStorage.theme = 'd';
+                    break;
+                case 'Choose theme e':
+                    localStorage.theme = 'e';
+                    break;
+                case 'Choose theme f':
+                    localStorage.theme = 'f';
+                    break;
+                default:
+                    localStorage.theme = 'a';
+
+            }
+
+            //var doc = document.querySelector('[data-theme]');
+            //doc.attr();
+            //alert(doc.getAttribute('data-theme'));
+            //$(doc).attr('data-theme', localStorage.theme);
+            location.reload();
+        })
+        //<script>  
+        $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
+            $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+        });
+        </script>
         <script src="js/js.js"></script>
         <script src="js/navigation.js"></script>
         <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-position="fixed">
-
             <h1 class="ui-title" role="heading" aria-level="1"></h1>
         </div>
 </body>
