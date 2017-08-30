@@ -15,11 +15,9 @@ This application will not leave you disappointed.
 ARCHITECTURE
 ------------
 
->Front end: HTML, CSS, JS, Ajax, JQuery Mobile framework [Branch: master](https://github.com/172926/tobuy-app.git)
-
->Middle tier: RESTful API hosted on Node.js [Branch: api](-b api https://github.com/172926/tobuy-app.git)
-
->Back end: MySQL [Branch: database](-b database https://github.com/172926/tobuy-app.git)
+      Front end: HTML, CSS, JS, Ajax, JQuery Mobile framework        Branch: master
+      Middle tier: RESTful API hosted on Node.js                     Branch: api
+      Back end: MySQL                                                Branch: database
 
 
 INSTALLATION
