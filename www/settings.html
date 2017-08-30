@@ -27,13 +27,13 @@
             <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel" data-display="overlay" data-position="left">
                 <div class="ui-panel-inner">
                     <ul data-role="listview">
-                        <li><a class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
-                        <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
-                        <li><a class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
-                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
-                        <li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
-                        <li><a class="ui-btn ui-icon-gear ui-btn-icon-right ui-state-disabled" id="settings-page" href="settings.html">Settings</a></li>
-                        <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-gear ui-btn-icon-right ui-state-disabled" id="settings-page" href="settings.html">Settings</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-comments ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,50 +67,53 @@
                     <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme6">Lolipop</a>
                 </div>
             </div>
-        <script>
-        $(".btn-theme").click(function() {
+            <script>
+            $(".btn-theme").click(function() {
 
-            var text = $(this).text();
-            switch (text) {
-                case 'Ocean breeze':
-                    localStorage.theme = 'a';
-                    break;
-                case 'Cookie':
-                    localStorage.theme = 'b';
-                    break;
-                case 'Dark night':
-                    localStorage.theme = 'c';
-                    break;
-                case 'Default':
-                    localStorage.theme = 'd';
-                    break;
-                case 'Malachite':
-                    localStorage.theme = 'e';
-                    break;
-                case 'Lolipop':
-                    localStorage.theme = 'f';
-                    break;
-                default:
-                    localStorage.theme = 'd';
+                var text = $(this).text();
+                switch (text) {
+                    case 'Ocean breeze':
+                        localStorage.theme = 'a';
+                        break;
+                    case 'Cookie':
+                        localStorage.theme = 'b';
+                        break;
+                    case 'Dark night':
+                        localStorage.theme = 'c';
+                        break;
+                    case 'Default':
+                        localStorage.theme = 'd';
+                        break;
+                    case 'Malachite':
+                        localStorage.theme = 'e';
+                        break;
+                    case 'Lolipop':
+                        localStorage.theme = 'f';
+                        break;
+                    default:
+                        localStorage.theme = 'a';
 
-            }
+                }
 
-            //var doc = document.querySelector('[data-theme]');
-            //doc.attr();
-            //alert(doc.getAttribute('data-theme'));
-            //$(doc).attr('data-theme', localStorage.theme);
-            location.reload();
-        });
-        //<script>  
-        $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
-            $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
-        });
-        </script>
-        <script src="js/js.js"></script>
-        <script src="js/navigation.js"></script>
-        <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-position="fixed">
-            <h1 class="ui-title" role="heading" aria-level="1"></h1>
-        </div>
+                //var doc = document.querySelector('[data-theme]');
+                //doc.attr();
+                //alert(doc.getAttribute('data-theme'));
+                //$(doc).attr('data-theme', localStorage.theme);
+                location.reload();
+            });
+            //<script>  
+            $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
+                $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+            });
+            </script>
+            <script src="js/js.js"></script>
+            <script src="js/navigation.js"></script>
+            <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-position="fixed">
+                <div style="text-align: right; font-size: 7px">
+                    <p>©Copyright</p>
+                    <p>All rights reserved by NIOL</p>
+                </div>
+            </div>
 </body>
 
 </html>

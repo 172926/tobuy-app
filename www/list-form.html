@@ -26,42 +26,42 @@
             <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel" data-display="overlay" data-position="left">
                 <div class="ui-panel-inner">
                     <ul data-role="listview">
-                        <li><a class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
-                        <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
-                        <li><a class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
-                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
-                        <li><a class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
-                        <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
-						<li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-info ui-btn-icon-right" id="info-page" href="info.html">Info</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-comment ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div id='form'>
-            <p>List name:</p>
-            <input type="textfield" id="listname" />
+            <h3>List name:</h3>
+            <input type="text" id="listname"/>
             <br>
-            <label for="groupname" class="select">Select group:</label>
+            <label for="groupname" class="select"><h3>Select group:</h3></label>
             <select id="group-name" name="groupname">
             </select>
             <br>
         </div>
         <a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-field'>Add item field</a>
-        <a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-btn-icon-left ui-mini btn-sbm'>Submit</a>
-		<script src="js/js.js"></script>
+        <a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-action ui-btn-icon-left ui-mini btn-sbm'>Submit</a>
+        <script src="js/js.js"></script>
         <script src="js/list-form.js"></script>
         <script src="js/navigation.js"></script>
         <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-position="fixed">
-
-            <h1 class="ui-title" role="heading" aria-level="1"></h1>
+            <div style="text-align: right; font-size: 7px">
+                <p>©Copyright</p>
+                <p>All rights reserved by NIOL</p>
+            </div>
         </div>
-		<script>
-			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
-				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
-			});
-		
-		</script>
+        <script>
+        $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
+            $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+        });
+        </script>
 </body>
 
 </html>

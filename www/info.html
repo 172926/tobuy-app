@@ -25,39 +25,38 @@
             <div class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open" id="mypanel" data-role="panel" data-display="overlay" data-position="left">
                 <div class="ui-panel-inner">
                     <ul data-role="listview">
-                        <li><a class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
-                        <li><a class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
-                        <li><a class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
-                        <li><a class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
-                        <li><a class="ui-btn ui-icon-info ui-btn-icon-right ui-state-disabled" id="info-page" href="info.html">Info</a></li>
-                        <li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
-						<li><a class="ui-btn ui-icon-gear ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-home ui-btn-icon-right" id="home-page" href="main.html">Home</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-user ui-btn-icon-right" id="groups-page" href="groups.html">Groups</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-bullets ui-btn-icon-right" id="lists-page" href="lists.html">Lists</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-mail ui-btn-icon-right" id="notifications-page" href="notifications.html">Notifications</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-info ui-btn-icon-right ui-state-disabled" id="info-page" href="info.html">Info</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-gear ui-btn-icon-right" id="settings-page" href="settings.html">Settings</a></li>
+                        <li><a style="padding: 12.4% 7%;" class="ui-btn ui-icon-comment ui-btn-icon-right" id="sms-page" href="sms.html">SMS</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- /panel -->
         <h3>Info</h3>
-        <p>ToBuy application is designed and implemented in order to satisfy the most demanding customers in area of shop items listing. Here you can find the breakthrough functions implemented by using the most modern technologies combined with dedicated work of world's best minds in area of mobile apps development. This application will not leave you disappointed(or it will, depend on you).</p>
+        <p>ToBuy application is designed and implemented in order to satisfy the most demanding customers in area of shop items listing. Here you can find the breakthrough functions implemented by using the most modern technologies combined with dedicated work of world's best minds in area of mobile apps development. This application will not leave you disappointed.</p>
         <h3>Architecture</h3>
         <p>Front end: HTML, CSS, JS, JQuery Mobile framework</p>
         <p>Middle tier: RESTful API hosted on Node.js</p>
         <p>Back end: MySQL</p>
-
         <script src="js/js.js"></script>
         <script src="js/navigation.js"></script>
         <div data-role="footer" class="ui-footer ui-bar-inherit" role="contentinfo" data-theme="a" data-position="fixed">
-
-        <div style="text-align: right; font-size: 7px"><p>©Copyright</p>
-        <p>All rights reserved by NIOL</p></div>
+            <div style="text-align: right; font-size: 7px">
+                <p>©Copyright</p>
+                <p>All rights reserved by NIOL</p>
+            </div>
         </div>
     </div>
-	<script>
-			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
-				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
-			});
-		
-		</script>
+    <script>
+    $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
+        $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+    });
+    </script>
 </body>
 
 </html>
