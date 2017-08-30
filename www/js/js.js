@@ -182,6 +182,6 @@ $('#create-group').click(function() {
 $("#btn-logout").click(function() {
 
 	localStorage.clear();
-	location.reload();
+	window.location.href = "index.html";
 
 });
