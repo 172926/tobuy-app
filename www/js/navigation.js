@@ -18,3 +18,6 @@ $("#info-page").click(function(){
 $("#settings-page").click(function(){
 	window.location.href = "settings.html";
 })
+$("#sms-page").click(function(){
+	window.location.href = "sms.html";
+})
