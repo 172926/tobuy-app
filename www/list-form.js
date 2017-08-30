@@ -4,7 +4,7 @@ var counter = 0;
 
 var data_counter = 0;
 
-var ipaddr = 'http://192.168.0.101:8081';
+var ipaddr = 'http://54.226.242.116:8081';
 
 
 if(localStorage.list_id){
