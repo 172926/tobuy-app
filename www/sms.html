@@ -11,19 +11,9 @@
     </head>
     <body>
 
-        <header class="bar bar-nav">
-          <h1 class="title">SMS Demo</h1>
-        </header>
-
-        <div class="content">
-            <div class="content-padded">
-                <form>
-                <input type="text" id="number" placeholder="Phone Number"><br/>
-                <textarea id="message" placeholder="Message"></textarea>
-                <input type="button" class="btn btn-positive btn-block" id="sendMessage" value="Send Message">
-                </form>
-            </div>
-        </div>
+        <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+		<textarea id="messageTxt" placeholder="Enter message"></textarea>
+		<input type="button" onclick="app.sendSms()" value="Send SMS" />
 
 
     <script src="cordova.js"></script>    
