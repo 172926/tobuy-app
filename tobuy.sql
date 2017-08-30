@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 25 2017 г., 19:40
+-- Время создания: Авг 30 2017 г., 20:55
 -- Версия сервера: 10.1.24-MariaDB
 -- Версия PHP: 7.0.20
 
@@ -36,7 +36,15 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `group_name` varchar(50) NOT NULL,
   `group_owner_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `groups`
+--
+
+INSERT INTO `groups` (`id`, `group_name`, `group_owner_id`) VALUES
+(11, 'Test', 1),
+(13, 'Test 2', 1);
 
 -- --------------------------------------------------------
 
@@ -51,7 +59,16 @@ CREATE TABLE IF NOT EXISTS `group_members` (
   `group_name` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `group_members`
+--
+
+INSERT INTO `group_members` (`id`, `group_id`, `group_name`, `user_id`) VALUES
+(11, 11, 'Test', 1),
+(13, 11, 'Test', 2),
+(14, 13, 'Test 2', 1);
 
 -- --------------------------------------------------------
 
@@ -65,7 +82,14 @@ CREATE TABLE IF NOT EXISTS `lists` (
   `list_name` varchar(50) NOT NULL,
   `group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `lists`
+--
+
+INSERT INTO `lists` (`id`, `list_name`, `group_id`) VALUES
+(9, 'my list', 11);
 
 -- --------------------------------------------------------
 
@@ -80,7 +104,15 @@ CREATE TABLE IF NOT EXISTS `list_items` (
   `item_content` varchar(200) NOT NULL,
   `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=276 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `list_items`
+--
+
+INSERT INTO `list_items` (`id`, `list_id`, `item_content`, `active`) VALUES
+(274, 9, '123', 1),
+(275, 9, '333', 0);
 
 -- --------------------------------------------------------
 
@@ -92,6 +124,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
+  `phone_number` varchar(50) NOT NULL,
   `password` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -100,9 +133,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'nekitko123@gmail.com', '123'),
-(2, 'alexashaka@gmail.com', '123');
+INSERT INTO `users` (`id`, `email`, `phone_number`, `password`) VALUES
+(1, 'nekitko123@gmail.com', '+380633491142', '123'),
+(2, 'alexashaka@gmail.com', '+380731648006', '123');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
