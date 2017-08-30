@@ -48,8 +48,8 @@ app.use(function(req, res, next) {
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'tobuyapprootpasswd',
-	database: 'tobuyapp'
+	password: '',
+	database: 'tobuy'
 });
 connection.connect(function(err){
 	if(!err){
@@ -235,13 +235,15 @@ app.post('/listUsers', urlencodedParser, function(req, res){
 	
 	var group_id = req.body.group_id;
 	
-	connection.query("SELECT email, id FROM users WHERE id IN (SELECT user_id FROM group_members WHERE group_id="+group_id+")", function(err, rows, fields){
+	connection.query("SELECT email, id, phone_number FROM users WHERE id IN (SELECT user_id FROM group_members WHERE group_id="+group_id+")", function(err, rows, fields){
 		try{
 			values = JSON.parse(JSON.stringify(rows));
+			console.log(values);
+			res.send(values);
 		}catch(err){
 			res.status(400).send(err);
 		} 
-		res.send(values);
+		
 		
 	});
 	
@@ -425,12 +427,24 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 		
 	})
 	
-	
-	
+
 	res.end();
 });
 
+app.post('/getItems', urlencodedParser, function(req, res){
+	
+	var list_id = req.body.list_id;
+	
+		connection.query("SELECT item_content, active FROM list_items WHERE list_id="+list_id+"", function(err, rows, fields){
+			try{
+				values = JSON.parse(JSON.stringify(rows));
+				res.send(values);
+			}catch(err){console.log(err)}
+			
+		});
 
+	
+});
 /*
 
 												EDIT LIST
@@ -459,4 +473,30 @@ app.post('/editList', urlencodedParser, function(req, res){
 	
 });
 
+app.post('/phoneNumber', urlencodedParser, function(req, res){
+	
+	var phone_number = req.body.phone_number;
+	var user_id = req.body.user_id;
+	
+	connection.query("UPDATE users SET phone_number='"+phone_number+"' WHERE id="+user_id+"", function(err, rows, field){
+		res.end();
+	});
+	
+});
+
+app.post('/sendSms', urlencodedParser, function(req, res){
+	
+	var group_id = req.body.group_id;
+	
+	connection.query("SELECT phone_number FROM users INNER JOIN group_members ON users.id=group_members.user_id WHERE group_members.group_id="+group_id+"", function(err, rows, field){
+		try{
+			values = JSON.parse(JSON.stringify(rows));
+			res.send(values);
+		}catch(err){
+			res.status(400).send(err);
+		}
+		
+	});
+	
+});
 
