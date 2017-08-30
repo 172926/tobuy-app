@@ -41,34 +41,53 @@
         <!-- /panel -->
         <h3>Settings</h3>
         <form>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Ocean breeze</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Cookie</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Dark night</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Default</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Malachite</a>
-            <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Lolipop</a>
-        </form>
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme1">Ocean breeze</a>
+                </div>
+                <div class="ui-block-b">
+                </div>
+                <div class="ui-block-c">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme2">Cookie</a>
+                </div>
+                <div class="ui-block-a">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme3">Dark night</a>
+                </div>
+                <div class="ui-block-b">
+                </div>
+                <div class="ui-block-c">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme4">Default</a>
+                </div>
+                <div class="ui-block-a">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme5">Malachite</a>
+                </div>
+                <div class="ui-block-b">
+                </div>
+                <div class="ui-block-c">
+                    <a class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all ui-shadow btn-theme" href="#" id="theme6">Lolipop</a>
+                </div>
+            </div>
         <script>
         $(".btn-theme").click(function() {
 
             var text = $(this).text();
             switch (text) {
-                case 'Choose theme a':
+                case 'Ocean breeze':
                     localStorage.theme = 'a';
                     break;
-                case 'Choose theme b':
+                case 'Cookie':
                     localStorage.theme = 'b';
                     break;
-                case 'Choose theme c':
+                case 'Dark night':
                     localStorage.theme = 'c';
                     break;
-                case 'Choose theme d':
+                case 'Default':
                     localStorage.theme = 'd';
                     break;
-                case 'Choose theme e':
+                case 'Malachite':
                     localStorage.theme = 'e';
                     break;
-                case 'Choose theme f':
+                case 'Lolipop':
                     localStorage.theme = 'f';
                     break;
                 default:
@@ -81,10 +100,10 @@
             //alert(doc.getAttribute('data-theme'));
             //$(doc).attr('data-theme', localStorage.theme);
             location.reload();
-        })
+        });
         //<script>  
         $(document).delegate('[data-role="page"]', 'pagecreate', function(e) {
-            $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+            $(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
         });
         </script>
         <script src="js/js.js"></script>
