@@ -14,5 +14,7 @@ ARCHITECTURE
 ------------
 
 >Front end: HTML, CSS, JS, JQuery Mobile framework | Branch: master
+
 >Middle tier: RESTful API hosted on Node.js        | Branch: api
+
 >Back end: MySQL                                   | Branch: database
