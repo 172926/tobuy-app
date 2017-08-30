@@ -49,6 +49,12 @@
         <p>All rights reserved by NIOL</p></div>
         </div>
     </div>
+	<script>
+			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
+				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+			});
+		
+		</script>
 </body>
 
 </html>
