@@ -15,11 +15,11 @@ This application will not leave you disappointed.
 ARCHITECTURE
 ------------
 
->Branch: master | Front end: HTML, CSS, JS, JQuery Mobile framework 
+>Front end: HTML, CSS, JS, JQuery Mobile framework | Branch: master
 
->Branch: api | Middle tier: RESTful API hosted on Node.js        
+>Middle tier: RESTful API hosted on Node.js        | Branch: api
 
->Branch: database | Back end: MySQL                                   
+>Back end: MySQL                                   | Branch: database
 
 
 INSTALLATION
