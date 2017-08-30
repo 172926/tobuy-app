@@ -1,7 +1,7 @@
 //Navigation
 
 $("#home-page").click(function(){
-	window.location.href = "index.html";
+	window.location.href = "main.html";
 })
 $("#groups-page").click(function(){
 	window.location.href = "groups.html";
