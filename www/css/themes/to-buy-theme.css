@@ -24,7 +24,7 @@ button,
 .ui-btn {
 	font-size: 1em;
 	line-height: 1.3;
-	 font-family: sans-serif /*{global-font-family}*/;
+	  font-family: sans-serif /*{global-font-family}*/;
 }
 legend,
 .ui-input-text input,
@@ -1166,10 +1166,10 @@ html .ui-bar-f .ui-slider-track .ui-btn-active,
 html .ui-body-f .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-f .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-f .ui-btn-active {
-	background-color: #808080 /*{f-active-background-color}*/;
-	border-color: #464646 /*{f-active-border}*/;
-	color: #ffffff /*{f-active-color}*/;
-	text-shadow: 0 /*{f-active-shadow-x}*/ 1px /*{f-active-shadow-y}*/ 0 /*{f-active-shadow-radius}*/ #444444 /*{f-active-shadow-color}*/;
+	background-color: #feffdd /*{f-active-background-color}*/;
+	border-color: #8b8c79 /*{f-active-border}*/;
+	color: #000000 /*{f-active-color}*/;
+	text-shadow: 0 /*{f-active-shadow-x}*/ 1px /*{f-active-shadow-y}*/ 0 /*{f-active-shadow-radius}*/ #eeeeee /*{f-active-shadow-color}*/;
 }
 /* Active radio button icon */
 .ui-page-theme-f .ui-radio-on:after,
@@ -1177,7 +1177,7 @@ html .ui-bar-f .ui-radio-on:after,
 html .ui-body-f .ui-radio-on:after,
 html body .ui-group-theme-f .ui-radio-on:after,
 .ui-btn.ui-radio-on.ui-btn-f:after {
-	border-color: #808080 /*{f-active-background-color}*/;
+	border-color: #feffdd /*{f-active-background-color}*/;
 }
 /* Focus */
 .ui-page-theme-f .ui-btn:focus,
@@ -1192,9 +1192,9 @@ html .ui-body-f .ui-focus,
 html body .ui-group-theme-f .ui-focus,
 html head + body .ui-btn-f.ui-focus,
 html head + body .ui-body-f.ui-focus {
-	-webkit-box-shadow: 0 0 12px #808080 /*{f-active-background-color}*/;
-	-moz-box-shadow: 0 0 12px #808080 /*{f-active-background-color}*/;
-	box-shadow: 0 0 12px #808080 /*{f-active-background-color}*/;
+	-webkit-box-shadow: 0 0 12px #feffdd /*{f-active-background-color}*/;
+	-moz-box-shadow: 0 0 12px #feffdd /*{f-active-background-color}*/;
+	box-shadow: 0 0 12px #feffdd /*{f-active-background-color}*/;
 }
 
 
