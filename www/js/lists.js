@@ -33,14 +33,14 @@ $.ajax({
                     for (var i = 0; i < data.length; i++) {
 
                         if (data[i].active == 0) {
-                            var content = "<div class='checkbox'><label class='ui-btn ui-corner-all ui-state-disabled ui-btn-icon-left ui-checkbox-on'>" +
+                            var content = "<div class='checkbox'><label style='text-align: left;' class='ui-btn ui-corner-all ui-state-disabled ui-btn-icon-left ui-checkbox-on'>" +
                                 "<input disabled='' style='display:none;' type='checkbox' data-enchanced='true'>" + data[i].item_content +
                                 "</label></div>"
                             $("#listform" + list_count).append(content);
                         } else {
                             var content2 = "<div class='checkbox' id='item-" + counter + "'>"+
                                 "<div style='display: none;'><input type='text' id='data-" + data_counter + "' value='" + data[i].item_content + "' disabled /></div>"+
-                                "<label class='ui-btn ui-corner-all ui-btn-icon-left ui-checkbox-off'>" +
+                                "<label style='text-align: left;' class='ui-btn ui-corner-all ui-btn-icon-left ui-checkbox-off'>" +
                                 "<input style='display: none;' type='checkbox' id='item-active-" + counter + "' value=" + data[i].id + " disabled=''  />" + data[i].item_content +  "</label></div>"
                             $("#listform2" + list_count).append(content2);
 
