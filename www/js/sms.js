@@ -18,7 +18,9 @@ $.ajax({
 						}
 					
 					},
-					error: function(e){alert(e.message)}
+					error: function(){
+					//alert(e.message)
+					}
 				});
 
 var app = {

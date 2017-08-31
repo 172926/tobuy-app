@@ -1,5 +1,5 @@
 var ipaddr = 'http://54.226.242.116:8081';
-
+//var ipaddr = 'http://192.168.0.102:8081'
 $.ajax({
 					url: ipaddr + '/getUserInv',
 					type: 'POST',
