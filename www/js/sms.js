@@ -22,7 +22,9 @@ $.ajax({
 					//alert(e.message)
 					}
 				});
-
+if(localStorage.group_id){
+localStorage.removeItem('group_id');
+}
 var app = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
@@ -41,6 +43,6 @@ var app = {
         //var success = function () { alert('Message sent successfully'); };
         //var error = function (e) { alert('Message Failed:' + e); };
         sms.send(number, message, options, success, error);
-		window.location.href = "main.html";
+		//window.location.href = "main.html";
     }
 };
