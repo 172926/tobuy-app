@@ -16,7 +16,7 @@
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
     </head>
     <body>
-		
+		<div data-role="page" data-theme="a">
 		<div data-role="header">
             <a class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext ui-corner-all" style="border-width: 0px" href="#mypanel"></a>
             <h1>To Buy List</h1>
@@ -47,8 +47,14 @@
         <div style="text-align: right; font-size: 7px; padding-right: 5px;"><p>©Copyright</p>
         <p>All rights reserved by NIOL</p></div>
         </div>
-		
+		</div>
     <script src="cordova.js"></script>    
     <script src="sms.js"></script>
+	<script>
+			$(document).delegate('[data-role="page"]', 'pagecreate', function (e) {
+				$(this).removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e').addClass('ui-body-' + localStorage.theme).attr('data-theme', localStorage.theme);
+			});
+		
+		</script>
     </body>
 </html>
