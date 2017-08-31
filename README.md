@@ -1,4 +1,4 @@
-Tobuy - shoping list application ![tobuy-logo](https://raw.githubusercontent.com/172926/tobuy-app/master/www/icon.png)
+Tobuy - shoping list application 
 =============================
 
 [![Build Status](https://secure.travis-ci.org/yiisoft/yii.png)](https://build.phonegap.com/apps/2616325/)
@@ -6,7 +6,7 @@ Tobuy - shoping list application ![tobuy-logo](https://raw.githubusercontent.com
 DESCRIPTION
 ------------
 
-ToBuy application is designed to serve as a shoping list, however ways to use this application are limited only by your imagination.
+ToBuy application ![tobuy-logo](https://raw.githubusercontent.com/172926/tobuy-app/master/www/icon-small.png) is designed to serve as a shoping list, however ways to use this application are limited only by your imagination.
 
 Here are some main functionality of the application: 
 
