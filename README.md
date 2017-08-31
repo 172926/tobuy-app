@@ -48,5 +48,5 @@ CONTRIBUTORS
 
 * Oleksandr Omelianenko (s175603@wizard.uek.krakow.pl)
 
-* Nikita Novikov		(s172926@wizard.uek.krakow.pl)
+* Mykyta Novikov		(s172926@wizard.uek.krakow.pl)
 
