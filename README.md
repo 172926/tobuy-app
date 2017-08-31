@@ -6,7 +6,7 @@ Tobuy - shoping list application
 DESCRIPTION
 ------------
 
-ToBuy application ![tobuy-logo](https://raw.githubusercontent.com/172926/tobuy-app/master/www/icon-small.png) is designed to serve as a shoping list, however ways to use this application are limited only by your imagination.
+ToBuy application is designed to serve as a shoping list, however ways to use this application are limited only by your imagination.
 
 Here are some main functionality of the application: 
 
