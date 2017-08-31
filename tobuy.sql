@@ -32,9 +32,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `group_members`
---
+
 
 DROP TABLE IF EXISTS `group_members`;
 CREATE TABLE IF NOT EXISTS `group_members` (
