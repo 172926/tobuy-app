@@ -201,28 +201,86 @@ var groupName = req.body.groupName;
 												ADD USER TO GROUP REQUEST
 
 */
+app.post('/addUserInv', urlencodedParser, function(req, res){
+	var groupName = req.body.groupName;
+	var id = req.body.id;
+	var userEmail = req.body.userEmail;
+	var groupId = req.body.group_id;
+	var group_id;
+	
+	//console.log(groupName + " " + id + " " + userEmail);
+	connection.query("SELECT id FROM users WHERE email='"+userEmail+"'", function(err, rows, fields){
+		values = JSON.parse(JSON.stringify(rows));
+		//console.log(values);
+		connection.query("INSERT INTO notifications (sender_id, group_id, group_name, receiver_id, accepted) VALUES ("+id+", "+groupId+",'"+groupName+"', "+values[0].id+", 0)", function(err, rows, fields){
+
+		});
+		
+	});
+	res.end();
+});
+
+app.post('/getUserInv', urlencodedParser, function(req, res){ ///////////////ADD SENDER EMAIL!!!
+	var user_id = req.body.user_id;
+	console.log(user_id)
+
+	connection.query("SELECT group_name, group_id, sender_id, accepted FROM notifications WHERE receiver_id="+user_id+"", function(err, rows, fields){
+		try{
+			//console.log(rows);
+			values = JSON.parse(JSON.stringify(rows));
+			res.send(values);
+		}catch(err){
+			//console.log(err);
+			res.status(400).send(err);
+		}
+	})
+})
+
+app.post('/acceptInv', urlencodedParser, function(req, res){
+	var user_id = req.body.user_id;
+	var group_id = req.body.group_id;
+	var group_name = req.body.group_name;
+	connection.query("INSERT INTO group_members (group_id, group_name, user_id) VALUES ("+group_id+",'"+group_name+"', "+user_id+")", function(err, rows, fields){
+		
+	});
+	connection.query("DELETE FROM notifications WHERE group_id="+group_id+" AND receiver_id="+user_id+"", function(err, rows, fields){
+		
+	});
+	res.end();
+})
+app.post('/cancelInv', urlencodedParser, function(req, res){
+	var user_id = req.body.user_id;
+	var group_id = req.body.group_id;
+	var group_name = req.body.group_name;
+	connection.query("DELETE FROM notifications WHERE group_id="+group_id+" AND receiver_id="+user_id+"", function(err, rows, fields){
+		
+	});
+	res.end();
+})
 
 app.post('/addUser', urlencodedParser, function(req, res){
 	var groupName = req.body.groupName;
 	var id = req.body.id;
 	var userEmail = req.body.userEmail;
 	var group_id;
-	
+	console.log(groupName + " " + id + " " + userEmail);
 	connection.query("SELECT id FROM groups WHERE group_name='"+groupName+"' AND group_owner_id="+id+"",function(err,rows,fields){
 		try{
 		
 			values = JSON.parse(JSON.stringify(rows));
 			group_id = values[0].id;
-		
+			
 			connection.query("INSERT INTO group_members (group_id, group_name, user_id) VALUES ("+group_id+", '"+groupName+"', (SELECT id FROM users WHERE email='"+userEmail+"'))",function(err,rows,fields){
 			});
+			res.end();
 		}catch(err){
+			console.log(err);
 			res.status(400).send(err);
 		}
 		
 	})
 	
-	res.end();
+	
 });
 
 /*
@@ -238,7 +296,7 @@ app.post('/listUsers', urlencodedParser, function(req, res){
 	connection.query("SELECT email, id, phone_number FROM users WHERE id IN (SELECT user_id FROM group_members WHERE group_id="+group_id+")", function(err, rows, fields){
 		try{
 			values = JSON.parse(JSON.stringify(rows));
-			console.log(values);
+			//console.log(values);
 			res.send(values);
 		}catch(err){
 			res.status(400).send(err);
@@ -292,7 +350,7 @@ app.post('/addList', urlencodedParser, function(req, res){
 app.post('/listListsGroups', urlencodedParser, function(req, res){
 	
 	var group_id = req.body.group_id;	
-	console.log("Get lists");
+	//console.log("Get lists");
 	connection.query("SELECT list_name FROM lists WHERE group_id="+group_id+"", function(err, rows, fields){
 		try{	
 			values = JSON.parse(JSON.stringify(rows));
