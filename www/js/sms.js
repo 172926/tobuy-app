@@ -1,6 +1,6 @@
 
 var ipaddr = 'http://54.226.242.116:8081';
-
+/*
 $.ajax({
 					url: ipaddr + '/sendSms',
 					type: 'POST',
@@ -25,6 +25,7 @@ $.ajax({
 if(localStorage.group_id){
 localStorage.removeItem('group_id');
 }
+*/
 var app = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
