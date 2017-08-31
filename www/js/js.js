@@ -192,10 +192,11 @@ $.ajax({
 					async: false,
 					data: {"list_name" : list_name, "group_id" : $(this).attr('data-group')},
 					success: function(data){},
-					error: function(e){alert(e.message)}
+					error: function(e){}
 				});
 				location.reload();
 				}
+				
 			});
 			
 			
