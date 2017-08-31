@@ -2,8 +2,7 @@ var ipaddr = 'http://54.226.242.116:8081';
 
 //while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
 //	localStorage.email = prompt("Provide user email:");
-if(window.location == "main.html")
-document.getElementById('user-email').innerHTML = "User email: " + localStorage.email;
+document.getElementById('user-email-main').innerHTML = "User email: " + localStorage.email;
 
 $('#submit-phone-number').click(function(){
 
