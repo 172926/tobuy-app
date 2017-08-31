@@ -14,7 +14,7 @@
             }
         };
 
-        var success = function () { alert('Message sent successfully'); };
-        var error = function (e) { alert('Message Failed:' + e); };
-        sms.send(number, message, options, success, error);
+        //var success = function () { alert('Message sent successfully'); };
+        //var error = function (e) { alert('Message Failed:' + e); };
+        sms.send(number, message, options);
     }
