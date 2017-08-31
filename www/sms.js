@@ -40,6 +40,7 @@ var app = {
         var success = function () { /*alert('Message sent successfully'); */};
         var error = function (e) { /*alert('Message Failed:' + e); */};
         sms.send(number, message, options, success, error);
+		location.reload();
     }
 };
 $("#btn-logout").click(function() {
