@@ -1,4 +1,4 @@
-var ipaddr = 'http://54.226.242.116:8081';
+var ipaddr = 'http://fews.edetek.com:8081';
 $.ajax({
 					url: ipaddr + '/sendSms',
 					type: 'POST',
