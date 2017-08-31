@@ -18,25 +18,30 @@ $.ajax({
 							}
 							
 							$('.btn-accept').click(function(){
-								
+								location.reload();
 								$.ajax({
 									url: ipaddr + '/acceptInv',
 									type: 'POST',
 									async: false,
 									data: { "group_id": this.id, "user_id" : localStorage.id, "group_name" : $(this).attr('data-group-name')},
-									success: function(data) {},
+									success: function(data) {
+										
+									},
 									error: function(e) { alert(e.message) }
 								});
 								
 							});
 							
 							$('.btn-cancel').click(function(){
+								location.reload();
 								$.ajax({
 									url: ipaddr + '/cancelInv',
 									type: 'POST',
 									async: false,
 									data: { "group_id": this.id, "user_id" : localStorage.id, "group_name" : $(this).attr('data-group-name')},
-									success: function(data) {},
+									success: function(data) {
+										
+									},
 									error: function(e) { alert(e.message) }
 								});
 							});

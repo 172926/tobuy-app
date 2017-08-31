@@ -3,10 +3,13 @@ var counter = 0;
 var data_counter = 0;
 
 var ipaddr = 'http://54.226.242.116:8081';
-
-
+//var ipaddr = 'http://192.168.0.102:8081'
+if(localStorage.editable){
+	document.getElementById("group-name").disabled = true;
+	localStorage.removeItem('editable');
+}
 if (localStorage.list_id) {
-
+	
     $.ajax({
         url: ipaddr + '/editList',
         type: 'POST',
@@ -17,6 +20,8 @@ if (localStorage.list_id) {
             document.getElementById("listname").setAttribute("disabled", true);
             document.getElementById("listname").value = data[data.length - 1][0].list_name;
 
+			
+			
             for (var i = 0; i < data.length - 1; i++) {
 
                 if (data[i].active == 0) {
