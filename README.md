@@ -37,7 +37,9 @@ INSTALLATION
 
 ![alt text](https://raw.githubusercontent.com/172926/tobuy-app/master/www/img/logo-android.png)
 
-Download and run instalation of the application on your android device from [Phonegap](https://build.phonegap.com/apps/2616325)
+Download and run instalation of the application on your android device from [Phonegap](https://build.phonegap.com/apps/2616325).
+
+Or scan QR code below.
 
 ![qr](https://raw.githubusercontent.com/172926/tobuy-app/master/www/img/chart.png)
 
