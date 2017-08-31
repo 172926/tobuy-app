@@ -19,14 +19,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `tobuy`
---
-CREATE DATABASE IF NOT EXISTS `tobuy` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `tobuy`;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `groups`
 --
 
