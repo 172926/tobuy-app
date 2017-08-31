@@ -38,10 +38,10 @@ $.ajax({
                                 "</label></div>"
                             $("#listform" + list_count).append(content);
                         } else {
-                            var content2 = "<div class='checkbox' id='item-" + counter + "'>"+
-                                "<div style='display: none;'><input type='text' id='data-" + data_counter + "' value='" + data[i].item_content + "' disabled /></div>"+
+                            var content2 = "<div class='checkbox' id='item-" + counter + "'>" +
+                                "<div style='display: none;'><input type='text' id='data-" + data_counter + "' value='" + data[i].item_content + "' disabled /></div>" +
                                 "<label style='text-align: left;' class='ui-btn ui-corner-all ui-btn-icon-left ui-checkbox-off'>" +
-                                "<input style='display: none;' type='checkbox' id='item-active-" + counter + "' value=" + data[i].id + " disabled=''  />" + data[i].item_content +  "</label></div>"
+                                "<input style='display: none;' type='checkbox' id='item-active-" + counter + "' value=" + data[i].id + " disabled=''  />" + data[i].item_content + "</label></div>"
                             $("#listform2" + list_count).append(content2);
 
                             counter++;
@@ -96,7 +96,7 @@ $('.btn-add-list').click(function() {
 
 $("#btn-logout").click(function() {
 
-	localStorage.clear();
-	window.location.href = "index.html";
+    localStorage.clear();
+    window.location.href = "index.html";
 
 });
