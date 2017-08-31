@@ -1,5 +1,5 @@
 
-var ipaddr = 'http://54.226.242.116:8081';
+//var ipaddr = 'http://54.226.242.116:8081';
 /*
 $.ajax({
 					url: ipaddr + '/sendSms',
@@ -30,7 +30,7 @@ var app = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
         var message = document.getElementById('messageTxt').value;
-        console.log("number=" + number + ", message= " + message);
+        //console.log("number=" + number + ", message= " + message);
 
         //CONFIGURATION
         var options = {
