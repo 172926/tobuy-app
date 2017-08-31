@@ -1,4 +1,4 @@
-Tobuy - shooping list application
+Tobuy - shoping list application ![tobuy-logo](https://raw.githubusercontent.com/172926/tobuy-app/master/www/icon.png)
 =============================
 
 [![Build Status](https://secure.travis-ci.org/yiisoft/yii.png)](https://build.phonegap.com/apps/2616325/)
@@ -6,11 +6,21 @@ Tobuy - shooping list application
 DESCRIPTION
 ------------
 
-ToBuy application is designed and implemented in order to satisfy the most demanding customers in area of shop items listing. 
+ToBuy application is designed to serve as a shoping list, however ways to use this application are limited only by your imagination.
 
-Here you can find the breakthrough functions implemented by using the most modern technologies combined with dedicated work of world's best minds in area of mobile apps development. 
+Here are some main functionality of the application: 
 
-This application will not leave you disappointed.
+> User profiles. This is network based application in which each user is able to store their private information(such as mobile phone number or email). That impies the need of having user profiles and proper secured authentication.
+
+> Groups. Each user can create a group and invite other people, share lists of items with the group or send group text messages.
+
+> Lists. User can create the list of items(e.g. shopping list). This list can be shared via group and edited by each group user.
+
+> Notifcations. Function responsible for application events display(e.g. group invitation) 
+
+> Settings. This section contains the application themes configuration. 
+
+> SMS. Application uses native cordova plugin and allows you to send sms notifications. 
 
 ARCHITECTURE
 ------------
