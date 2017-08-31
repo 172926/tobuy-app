@@ -88,6 +88,23 @@ app.post('/login',urlencodedParser, function(req, res) {
 });
 
 
+app.post('/register', urlencodedParser, function(req, res){
+
+	var email = req.body.txt_email;
+	var password = req.body.txt_password;
+	//console.log(email + " " + pass);
+		var auth = firebase.auth();
+		var promise = auth.createUserWithEmailAndPassword(email, password);
+		//var err = promise.catch(e => res.status(400).send(e.message));
+		var stat = "";
+		var err = promise.catch(e => res.status(400).send(e.message));
+		connection.query("INSERT INTO users (email) VALUES ('"+email+"')", function(err){
+	
+		});
+		
+});
+
+
 /*
 
 												GET USER ID BY EMAIL
@@ -158,7 +175,7 @@ app.post('/createGroup', urlencodedParser, function(req, res){
 	
 	var groupName = req.body.groupName;
 	var id = req.body.id;
-	console.log(groupName);
+	//console.log(groupName);
 	connection.query("INSERT INTO groups(group_name, group_owner_id) VALUES('"+groupName+"', "+id+")", function(err,rows,fields){
 		
 	});
@@ -222,7 +239,7 @@ app.post('/addUserInv', urlencodedParser, function(req, res){
 
 app.post('/getUserInv', urlencodedParser, function(req, res){ ///////////////ADD SENDER EMAIL!!!
 	var user_id = req.body.user_id;
-	console.log(user_id)
+	//console.log(user_id)
 
 	connection.query("SELECT group_name, group_id, sender_id, accepted FROM notifications WHERE receiver_id="+user_id+"", function(err, rows, fields){
 		try{
@@ -263,7 +280,7 @@ app.post('/addUser', urlencodedParser, function(req, res){
 	var id = req.body.id;
 	var userEmail = req.body.userEmail;
 	var group_id;
-	console.log(groupName + " " + id + " " + userEmail);
+	//console.log(groupName + " " + id + " " + userEmail);
 	connection.query("SELECT id FROM groups WHERE group_name='"+groupName+"' AND group_owner_id="+id+"",function(err,rows,fields){
 		try{
 		
@@ -462,8 +479,8 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 	var item_id = req.body.item_id;
 	var item_active = req.body.item_active;
 	
-	//console.log(item_id);
-	//console.log(item_data + " " + item_active);
+	console.log(item_id);
+	//console.log(item_id + " " + item_active);
 	
 	connection.query("SELECT item_content FROM list_items INNER JOIN lists ON list_items.list_id=lists.id WHERE list_items.list_id=(SELECT id FROM lists WHERE list_name='"+list_name+"' AND group_id="+group_id+") AND list_items.item_content='"+item_data+"'", function(err, rows, fields){
 		
@@ -492,11 +509,11 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 app.post('/getItems', urlencodedParser, function(req, res){
 	
 	var list_id = req.body.list_id;
-	console.log(list_id);
+	//console.log(list_id);
 		connection.query("SELECT item_content, active FROM list_items WHERE list_id="+list_id+"", function(err, rows, fields){
 			try{
 				values = JSON.parse(JSON.stringify(rows));
-				console.log("values for " + list_id + ":" + values);
+				//console.log("values for " + list_id + ":" + values);
 				res.send(values);
 			}catch(err){console.log(err)}
 			
