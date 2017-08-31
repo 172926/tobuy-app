@@ -52,11 +52,11 @@ $.ajax({
             var content = "<div data-role='collapsible' data-theme='"+localStorage.theme+"' data-content-theme='"+localStorage.theme+"' id='group" + nextId + "'>" +
                 "<h2>" + data[i] + "</h2>" +
                 "<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
-                "<h3>users:</h3>" +
+                "<h3>Users:</h3>" +
 				"<span id='users"+i+"'/>"+
                 "</ul>" +
 				"<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
-                "<h3>lists:</h3>" +
+                "<h3>Lists:</h3>" +
 				"<span id='lists"+i+"'/>"+
                 "</ul>" +
                 "<div class='ui-grid-a'>" + 
