@@ -1,4 +1,4 @@
-Tobuy - shoping list application 
+Tobuy - shopping list application 
 =============================
 
 [![Build Status](https://secure.travis-ci.org/yiisoft/yii.png)](https://build.phonegap.com/apps/2616325/)
