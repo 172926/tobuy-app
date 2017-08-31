@@ -96,8 +96,7 @@ $('.btn-add-list').click(function() {
 
 $("#btn-logout").click(function() {
 
-	//localStorage.clear();
-	//window.location.href = "index.html";
+	localStorage.clear();
+	window.location.href = "index.html";
 
-
-})
+});

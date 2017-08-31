@@ -136,4 +136,11 @@ $(".btn-sbm").click(function() {
         }
     }
     window.location.href = "lists.html";
-})
+});
+
+$("#btn-logout").click(function() {
+
+	localStorage.clear();
+	window.location.href = "index.html";
+
+});
