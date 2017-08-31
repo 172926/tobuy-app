@@ -30,10 +30,10 @@ if (localStorage.list_id) {
                         "</label></div>"
                     $("#listform").append(content);
                 } else {
-                    var content2 = "<div class='checkbox' id='item-" + counter + "'><label class='ui-btn ui-btn-icon-left ui-checkbox-on'>"+
-                    "<input type='checkbox' id='item-active-" + counter + "' value='" + data[i].id + "'/>"  + data[i].item_content + 
-                        "</label><div  style='display: none;'><input type='text' id='data-" + data_counter + "' value='"+ data[i].item_content +"'></div></div>"
-                    $( "#listform2" ).append(content2);
+                    var content2 = "<div class='checkbox' id='item-" + counter + "'><label class='ui-btn ui-btn-icon-left ui-checkbox-on'>" +
+                        "<input type='checkbox' id='item-active-" + counter + "' value='" + data[i].id + "'/>" + data[i].item_content +
+                        "</label><div  style='display: none;'><input type='text' id='data-" + data_counter + "' value='" + data[i].item_content + "'></div></div>"
+                    $("#listform2").append(content2);
 
                     counter++;
                     data_counter++;
@@ -51,43 +51,43 @@ if (localStorage.list_id) {
     });
 
 }
-if(localStorage.editable){
-	 //alert("qwe");
-	 $.ajax({
-		url: ipaddr + '/listgroup',
-		type: 'POST',
-		data: { "id": localStorage.id, "group_name" : localStorage.group_name },
-		async: true,
-		success: function(data) {
-			
+if (localStorage.editable) {
+    //alert("qwe");
+    $.ajax({
+        url: ipaddr + '/listgroup',
+        type: 'POST',
+        data: { "id": localStorage.id, "group_name": localStorage.group_name },
+        async: true,
+        success: function(data) {
+
             var content = "<option id='" + data[0].group_id + "' disabled selected>" + localStorage.group_name + "</option>";
             $("#group-name").append(content);
-			localStorage.removeItem('editable');
-			localStorage.removeItem('group_name')
-		},
-    error: function(e) {alert("!!")}
-});
-	 
-}else{
-$.ajax({
-    url: ipaddr + '/listgroups',
-    type: 'POST',
-    data: { "id": localStorage.id },
-    async: true,
-    success: function(data) {
+            localStorage.removeItem('editable');
+            localStorage.removeItem('group_name')
+        },
+        error: function(e) { alert("!!") }
+    });
 
-        for (var i = 0; i < data.length / 2; i++) {
-            //alert(data[i]);
-            var nextId = i;
-            nextId++;
+} else {
+    $.ajax({
+        url: ipaddr + '/listgroups',
+        type: 'POST',
+        data: { "id": localStorage.id },
+        async: true,
+        success: function(data) {
 
-            var content = "<option id='" + data[i + data.length / 2] + "'>" + data[i] + "</option>";
-            $("#group-name").append(content);
+            for (var i = 0; i < data.length / 2; i++) {
+                //alert(data[i]);
+                var nextId = i;
+                nextId++;
 
-        }
-    },
-    error: function(e) {}
-});
+                var content = "<option id='" + data[i + data.length / 2] + "'>" + data[i] + "</option>";
+                $("#group-name").append(content);
+
+            }
+        },
+        error: function(e) {}
+    });
 }
 //localStorage.removeItem('editable');
 //localStorage.removeItem('group_name');
@@ -159,7 +159,7 @@ $(".btn-sbm").click(function() {
 
 $("#btn-logout").click(function() {
 
-	localStorage.clear();
-	window.location.href = "index.html";
+    localStorage.clear();
+    window.location.href = "index.html";
 
 });
