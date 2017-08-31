@@ -14,8 +14,6 @@ CREATE TABLE IF NOT EXISTS `groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 
 
 DROP TABLE IF EXISTS `group_members`;
@@ -27,8 +25,6 @@ CREATE TABLE IF NOT EXISTS `group_members` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 
 DROP TABLE IF EXISTS `lists`;
 CREATE TABLE IF NOT EXISTS `lists` (
@@ -37,8 +33,6 @@ CREATE TABLE IF NOT EXISTS `lists` (
   `group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 
 DROP TABLE IF EXISTS `list_items`;
@@ -50,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `list_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=300 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE IF NOT EXISTS `notifications` (
@@ -62,9 +55,6 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `accepted` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
 
 
 DROP TABLE IF EXISTS `users`;
