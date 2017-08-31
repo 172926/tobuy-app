@@ -54,3 +54,9 @@ $.ajax({
 					},
 					error: function(e){alert(e.message)}
 });
+$("#btn-logout").click(function() {
+
+	localStorage.clear();
+	window.location.href = "index.html";
+
+});

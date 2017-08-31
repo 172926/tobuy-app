@@ -5,7 +5,6 @@ if(localStorage.email){
 }
 
 $('#btn-submit').click(function() {
-alert("started");
     $.ajax({
         type: "POST",
         url: ipaddr + '/login',

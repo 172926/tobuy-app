@@ -42,3 +42,9 @@ var app = {
         sms.send(number, message, options, success, error);
     }
 };
+$("#btn-logout").click(function() {
+
+	localStorage.clear();
+	window.location.href = "index.html";
+
+});

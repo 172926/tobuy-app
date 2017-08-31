@@ -15,8 +15,8 @@ $('#submit-phone-number').click(function(){
 			async: false,
 			data: {"phone_number" : $('#phone-number').val(), "user_id" : localStorage.id},
 			success: function(data){
-			
-			
+				alert("Successfully updated!");
+				location.reload();
 			
 			},
 			error: function(e){alert(e)}
