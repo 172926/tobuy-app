@@ -1,4 +1,4 @@
-var ipaddr = 'http://192.168.0.101:8081';
+var ipaddr = 'http://54.226.242.116:8081';
 
 $('#btn-submit').click(function() {
 
