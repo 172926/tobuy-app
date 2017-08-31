@@ -51,12 +51,12 @@ $.ajax({
             nextId++;
             var content = "<div data-role='collapsible' data-theme='"+localStorage.theme+"' data-content-theme='"+localStorage.theme+"' id='group" + nextId + "'>" +
                 "<h2>" + data[i] + "</h2>" +
-                "<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
-                "<h3>users:</h3>" +
+                "<ul style='padding-left:0;' data-role='listview' data-inset='true' id='appendib"+i+"'>" +
+                "<h3>Users:</h3>" +
 				"<span id='users"+i+"'/>"+
                 "</ul>" +
-				"<ul data-role='listview' data-inset='true' id='appendib"+i+"'>" +
-                "<h3>lists:</h3>" +
+				"<ul style='padding-left:0;' data-role='listview' data-inset='true' id='appendib"+i+"'>" +
+                "<h3>Lists:</h3>" +
 				"<span id='lists"+i+"'/>"+
                 "</ul>" +
                 "<div class='ui-grid-a'>" + 
@@ -97,7 +97,7 @@ $.ajax({
 						while(dat > 0){
 							document.getElementById('users'+count).innerHTML += data[dat-1].email + "<br>" + data[dat-1].phone_number;
 							var btn = document.createElement('a');
-							btn.setAttribute("class", "ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini user_id");
+							btn.setAttribute("class", "ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-notext ui-mini user_id");
 							btn.setAttribute("data-user_id", data[dat-1].id);
 							btn.setAttribute("data-group_id", group_id);
 							document.getElementById('users'+count).append(btn);
