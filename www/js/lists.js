@@ -15,9 +15,9 @@ $.ajax({
                 "<h3>Group: " + data[i + (data.length / 3) * 2] + "</h3>" +
                 "<div id='listform" + list_count + "'><div id='listform2" + list_count + "'></div></div>" +
                 "<div class='ui-grid-a'>" + "<div class='ui-block-a'>" +
-                "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-gear ui-btn-icon-left ui-mini btn-edit-list' id='" + data[i] + "' data-list_id=" + data[i + (data.length / 3)] + " data-group_name='" + data[i + (data.length / 3) * 2] + "' href='#'>Edit list</a>" + "</div>" +
+                "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-gear ui-btn-icon-left ui-mini btn-edit-list' id='" + data[i] + "' data-list_id=" + data[i + (data.length / 3)] + " data-group_name='" + data[i + (data.length / 3) * 2] + "' href='#'>Edit list</a>" + "</div>" +
                 "<div class='ui-block-b'>" +
-                "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-list_id=" + data[i + (data.length / 3)] + " href='#'>Delete list</a>" + "</div>" +
+                "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-list_id=" + data[i + (data.length / 3)] + " href='#'>Delete list</a>" + "</div>" +
                 "</div>" + "</div>";
             $("#setList").append(content).collapsibleset('refresh');
 

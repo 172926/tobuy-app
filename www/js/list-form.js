@@ -104,7 +104,7 @@ function deletion(id) {
 
 $(".btn-add-field").click(function() {
 
-    var content = "<div id='item-" + counter + "'><input type='textfield' id='data-" + data_counter + "' /><a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='item-" + counter + "' onClick='deletion(this.id)'></a><br></div>"
+    var content = "<div id='item-" + counter + "'><input type='textfield' id='data-" + data_counter + "' /><a class='ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='item-" + counter + "' onClick='deletion(this.id)'></a><br></div>"
     $("#listform").append(content);
     data_counter++;
     counter++;

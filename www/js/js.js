@@ -60,12 +60,12 @@ $.ajax({
                 "<span id='lists" + i + "'/>" +
                 "</ul>" +
                 "<div class='ui-grid-a'>" +
-                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user-inv' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Send invite</a>" + "</div>" +
-                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-list' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Create list</a>" + "</div>" +
-                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-sms' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group SMS</a>" + "</div>" +
+                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user-inv' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Send invite</a>" + "</div>" +
+                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-list' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Create list</a>" + "</div>" +
+                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-sms' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group SMS</a>" + "</div>" +
                 "<br />" +
                 "<div class='ui-block-b'>" +
-                "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
+                "<a class='ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
                 "</div>" + "</div>";
             $("#setGroup").append(content).collapsibleset('refresh');
             $('.btn-delete').click(function() {
