@@ -1,6 +1,5 @@
 var app = {
-    sendSms: function (){
-	//alert("Start SMS sending");
+    sendSms: function() {
         var number = document.getElementById('numberTxt').value;
         var message = document.getElementById('messageTxt').value;
         console.log("number=" + number + ", message= " + message);
@@ -18,4 +17,4 @@ var app = {
         var error = function (e) { alert('Message Failed:' + e); };
         sms.send(number, message, options, success, error);
     }
-}
+};
