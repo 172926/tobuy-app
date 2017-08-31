@@ -2,7 +2,7 @@ var ipaddr = 'http://54.226.242.116:8081';
 
 //while(localStorage.email === undefined || localStorage.email == '' || localStorage.id === undefined){
 //	localStorage.email = prompt("Provide user email:");
-if(window.location.href == "main.html")
+if(window.location == "main.html")
 document.getElementById('user-email').innerHTML = "User email: " + localStorage.email;
 
 $('#submit-phone-number').click(function(){
@@ -61,7 +61,8 @@ $.ajax({
 				"<span id='lists"+i+"'/>"+
                 "</ul>" +
                 "<div class='ui-grid-a'>" + 
-				"<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Add User</a>" + "</div>" +
+				"<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user-inv' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Send invite</a>" + "</div>" +
+				"<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Add User</a>" + "</div>" +
                 "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-list' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Create list</a>" + "</div>" +
                 "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-sms' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group SMS</a>" + "</div>" +
                 "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-email' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group e-mail</a>" + "</div>" +
@@ -163,6 +164,25 @@ $.ajax({
 				location.reload();
 			});
 			
+			
+			
+			$('.btn-add-user-inv').click(function() {
+				var userEmail = prompt("Enter the user email: ");
+				$.ajax({
+					url: ipaddr + '/addUserInv',
+					type: 'POST',
+					async: false,
+					data: {"groupName" : this.id, "id" : localStorage.id, "userEmail" : userEmail, "group_id" : $(this).attr('data-group')},
+					success: function(data){},
+					error: function(e){alert(e.message)}
+				});
+				location.reload();
+			});
+			
+			
+			
+
+			
 			$('.btn-add-list').click(function() {
 				var list_name = prompt("Enter the list name: ");
 				
@@ -180,6 +200,8 @@ $.ajax({
 				location.reload();
 				}
 			});
+			
+			
 			
 			$('.btn-send-sms').click(function() {
 				localStorage.group_id = $(this).attr('data-group');
