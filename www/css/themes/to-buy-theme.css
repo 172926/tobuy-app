@@ -878,10 +878,10 @@ html head + body .ui-body-d.ui-focus {
 html .ui-bar-e .ui-bar-inherit,
 html .ui-body-e .ui-bar-inherit,
 html body .ui-group-theme-e .ui-bar-inherit {
-	background-color: #adffb1 /*{e-bar-background-color}*/;
-	border-color: #5f8c61 /*{e-bar-border}*/;
-	color: #000000 /*{e-bar-color}*/;
-	text-shadow: 0 /*{e-bar-shadow-x}*/ 1px /*{e-bar-shadow-y}*/ 0 /*{e-bar-shadow-radius}*/ #eeeeee /*{e-bar-shadow-color}*/;
+	background-color: #006837 /*{e-bar-background-color}*/;
+	border-color: #54914d /*{e-bar-border}*/;
+	color: #ffffff /*{e-bar-color}*/;
+	text-shadow: 0 /*{e-bar-shadow-x}*/ 1px /*{e-bar-shadow-y}*/ 0 /*{e-bar-shadow-radius}*/ #444444 /*{e-bar-shadow-color}*/;
 	font-weight: bold;
 }
 .ui-bar-e {
@@ -892,8 +892,8 @@ html body .ui-group-theme-e .ui-bar-inherit {
 .ui-overlay-e,
 .ui-page-theme-e,
 .ui-page-theme-e .ui-panel-wrapper {
-	background-color: #dcfaf5 /*{e-page-background-color}*/;
-	border-color: #dcfaf5 /*{e-page-border}*/;
+	background-color: #f4ffe6 /*{e-page-background-color}*/;
+	border-color: #f4ffe6 /*{e-page-border}*/;
 	color: #000000 /*{e-page-color}*/;
 	text-shadow: 0 /*{e-page-shadow-x}*/ 1px /*{e-page-shadow-y}*/ 0 /*{e-page-shadow-radius}*/ #eeeeee /*{e-page-shadow-color}*/;
 }
@@ -904,8 +904,8 @@ html .ui-bar-e .ui-body-inherit,
 html .ui-body-e .ui-body-inherit,
 html body .ui-group-theme-e .ui-body-inherit,
 html .ui-panel-page-container-e {
-	background-color: #d8fed9 /*{e-body-background-color}*/;
-	border-color: #768b77 /*{e-body-border}*/;
+	background-color: #f2ffe1 /*{e-body-background-color}*/;
+	border-color: #858c7b /*{e-body-border}*/;
 	color: #000000 /*{e-body-color}*/;
 	text-shadow: 0 /*{e-body-shadow-x}*/ 1px /*{e-body-shadow-y}*/ 0 /*{e-body-shadow-radius}*/ #eeeeee /*{e-body-shadow-color}*/;
 }
@@ -951,10 +951,10 @@ html .ui-bar-e .ui-btn:visited,
 html .ui-body-e .ui-btn:visited,
 html body .ui-group-theme-e .ui-btn:visited,
 html head + body .ui-btn.ui-btn-e:visited {
-	background-color: #adffb1 /*{e-bup-background-color}*/;
-	border-color: #5f8c61 /*{e-bup-border}*/;
-	color: #000000 /*{e-bup-color}*/;
-	text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ #eeeeee /*{e-bup-shadow-color}*/;
+	background-color: #009245 /*{e-bup-background-color}*/;
+	border-color: #54cc60 /*{e-bup-border}*/;
+	color: #ffffff /*{e-bup-color}*/;
+	text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ #444444 /*{e-bup-shadow-color}*/;
 }
 /* Button hover */
 .ui-page-theme-e .ui-btn:hover,
@@ -962,10 +962,10 @@ html .ui-bar-e .ui-btn:hover,
 html .ui-body-e .ui-btn:hover,
 html body .ui-group-theme-e .ui-btn:hover,
 html head + body .ui-btn.ui-btn-e:hover {
-	background-color: #c6FFcb /*{e-bhover-background-color}*/;
-	border-color: #6c8c6f /*{e-bhover-border}*/;
-	color: #000000 /*{e-bhover-color}*/;
-	text-shadow: 0 /*{e-bhover-shadow-x}*/ 1px /*{e-bhover-shadow-y}*/ 0 /*{e-bhover-shadow-radius}*/ #eeeeee /*{e-bhover-shadow-color}*/;
+	background-color: #45a74f /*{e-bhover-background-color}*/;
+	border-color: #60e96e /*{e-bhover-border}*/;
+	color: #ffffff /*{e-bhover-color}*/;
+	text-shadow: 0 /*{e-bhover-shadow-x}*/ 1px /*{e-bhover-shadow-y}*/ 0 /*{e-bhover-shadow-radius}*/ #444444 /*{e-bhover-shadow-color}*/;
 }
 /* Button down */
 .ui-page-theme-e .ui-btn:active,
@@ -973,10 +973,10 @@ html .ui-bar-e .ui-btn:active,
 html .ui-body-e .ui-btn:active,
 html body .ui-group-theme-e .ui-btn:active,
 html head + body .ui-btn.ui-btn-e:active {
-	background-color: #c6FFcb /*{e-bdown-background-color}*/;
-	border-color: #6c8c6f /*{e-bdown-border}*/;
-	color: #000000 /*{e-bdown-color}*/;
-	text-shadow: 0 /*{e-bdown-shadow-x}*/ 1px /*{e-bdown-shadow-y}*/ 0 /*{e-bdown-shadow-radius}*/ #eeeeee /*{e-bdown-shadow-color}*/;
+	background-color: #45a74f /*{e-bdown-background-color}*/;
+	border-color: #255b2b /*{e-bdown-border}*/;
+	color: #ffffff /*{e-bdown-color}*/;
+	text-shadow: 0 /*{e-bdown-shadow-x}*/ 1px /*{e-bdown-shadow-y}*/ 0 /*{e-bdown-shadow-radius}*/ #444444 /*{e-bdown-shadow-color}*/;
 }
 /* Active button */
 .ui-page-theme-e .ui-btn.ui-btn-active,
@@ -1002,8 +1002,8 @@ html .ui-bar-e .ui-slider-track .ui-btn-active,
 html .ui-body-e .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-e .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-e .ui-btn-active {
-	background-color: #a8ada9 /*{e-active-background-color}*/;
-	border-color: #5c5f5c /*{e-active-border}*/;
+	background-color: #8fb4a3 /*{e-active-background-color}*/;
+	border-color: #4e6359 /*{e-active-border}*/;
 	color: #000000 /*{e-active-color}*/;
 	text-shadow: 0 /*{e-active-shadow-x}*/ 1px /*{e-active-shadow-y}*/ 0 /*{e-active-shadow-radius}*/ #eeeeee /*{e-active-shadow-color}*/;
 }
@@ -1013,7 +1013,7 @@ html .ui-bar-e .ui-radio-on:after,
 html .ui-body-e .ui-radio-on:after,
 html body .ui-group-theme-e .ui-radio-on:after,
 .ui-btn.ui-radio-on.ui-btn-e:after {
-	border-color: #a8ada9 /*{e-active-background-color}*/;
+	border-color: #8fb4a3 /*{e-active-background-color}*/;
 }
 /* Focus */
 .ui-page-theme-e .ui-btn:focus,
@@ -1028,9 +1028,9 @@ html .ui-body-e .ui-focus,
 html body .ui-group-theme-e .ui-focus,
 html head + body .ui-btn-e.ui-focus,
 html head + body .ui-body-e.ui-focus {
-	-webkit-box-shadow: 0 0 12px #a8ada9 /*{e-active-background-color}*/;
-	-moz-box-shadow: 0 0 12px #a8ada9 /*{e-active-background-color}*/;
-	box-shadow: 0 0 12px #a8ada9 /*{e-active-background-color}*/;
+	-webkit-box-shadow: 0 0 12px #8fb4a3 /*{e-active-background-color}*/;
+	-moz-box-shadow: 0 0 12px #8fb4a3 /*{e-active-background-color}*/;
+	box-shadow: 0 0 12px #8fb4a3 /*{e-active-background-color}*/;
 }
 
 
