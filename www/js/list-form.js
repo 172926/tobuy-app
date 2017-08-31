@@ -5,7 +5,7 @@ var data_counter = 0;
 var ipaddr = 'http://54.226.242.116:8081';
 //var ipaddr = 'http://192.168.0.102:8081'
 if(localStorage.editable){
-	document.getElementById("group-name").disabled = true;
+	//document.getElementById("group-name").disabled = true;
 	localStorage.removeItem('editable');
 }
 if (localStorage.list_id) {
@@ -32,7 +32,7 @@ if (localStorage.list_id) {
                 } else {
                     var content2 = "<div id='item-" + counter + "'><input type='text' id='data-" + data_counter + "' value='" + data[i].item_content + "'  />" +
                         "</div>" +
-                        "<input type='checkbox' id='item-active-" + counter + "' value='' />"
+                        "<input type='checkbox' id='item-active-" + counter + "' value='"+data[i].id+"' />"
                     $("#form").append(content2);
 
                     counter++;
@@ -128,7 +128,7 @@ $(".btn-sbm").click(function() {
                 url: ipaddr + '/submitListItems',
                 type: 'POST',
                 async: false,
-                data: { "item_data": $('#data-' + i).val(), "group_id": group_id, "list_name": $("#listname").val(), "item_id": check.value },
+                data: { "item_data": $('#data-' + i).val(), "group_id": group_id, "list_name": $("#listname").val(), "item_id": check.value, "item_active" : 0 },
                 success: function(data) {},
                 error: function(e) { alert(e.message) }
             });
