@@ -62,10 +62,8 @@ $.ajax({
                 "</ul>" +
                 "<div class='ui-grid-a'>" + 
 				"<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user-inv' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Send invite</a>" + "</div>" +
-				"<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-user' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Add User</a>" + "</div>" +
                 "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-add-list' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Create list</a>" + "</div>" +
                 "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-sms' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group SMS</a>" + "</div>" +
-                "<div class='ui-block-a'>" + "<a class='ui-btn ui-btn-inline ui-btn-b ui-corner-all ui-icon-plus ui-btn-icon-left ui-mini btn-send-email' id=" + data[i] + " data-group=" + data[i + (data.length / 2)] + " href='#'>Send group e-mail</a>" + "</div>" +
 				"<br />" +
 				"<div class='ui-block-b'>" +
                 "<a class='ui-btn ui-btn-inline ui-btn-c ui-corner-all ui-icon-delete ui-btn-icon-right ui-mini btn-delete' id='" + data[i] + "' data-group=" + data[i + (data.length / 2)] + " href='#'>Delete group</a>" + "</div>" +
@@ -150,7 +148,7 @@ $.ajax({
 					}
 				}
 			});
-			
+			/*
 			$('.btn-add-user').click(function() {
 				var userEmail = prompt("Enter the user email: ");
 				$.ajax({
@@ -163,7 +161,7 @@ $.ajax({
 				});
 				location.reload();
 			});
-			
+			*/
 			
 			
 			$('.btn-add-user-inv').click(function() {
