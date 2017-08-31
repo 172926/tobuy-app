@@ -1,5 +1,5 @@
-var app{
-    function sendSms(){
+var app = {
+    sendSms: function (){
 	//alert("Start SMS sending");
         var number = document.getElementById('numberTxt').value;
         var message = document.getElementById('messageTxt').value;
