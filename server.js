@@ -11,7 +11,8 @@ var url = require('url');
 
 												FIREBASE INIT
 
-												*/
+
+*/
 
 var config = {
     apiKey: "AIzaSyAY1t4H9D3PUeu4j6_odxV1xQ5MAhS_S9Q",
