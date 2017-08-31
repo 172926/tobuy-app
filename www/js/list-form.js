@@ -5,8 +5,9 @@ var data_counter = 0;
 var ipaddr = 'http://54.226.242.116:8081';
 //var ipaddr = 'http://192.168.0.102:8081'
 if (localStorage.editable) {
+	
     //document.getElementById("group-name").disabled = true;
-    localStorage.removeItem('editable');
+    //localStorage.removeItem('editable');
 }
 if (localStorage.list_id) {
 
@@ -51,7 +52,23 @@ if (localStorage.list_id) {
     });
 
 }
+if(localStorage.editable){
+	 
+	 $.ajax({
+		url: ipaddr + '/listgroup',
+		type: 'POST',
+		data: { "id": localStorage.id, "group_name" : localStorage.group_name },
+		async: true,
+		success: function(data) {
 
+            var content = "<option id='" + data.group_id + "'>" + localStorage.group_name + "</option>";
+            $("#group-name").append(content);
+		
+		},
+    error: function(e) {}
+});
+	 
+}else{
 $.ajax({
     url: ipaddr + '/listgroups',
     type: 'POST',
@@ -71,7 +88,9 @@ $.ajax({
     },
     error: function(e) {}
 });
-
+}
+localStorage.removeItem('editable');
+localStorage.removeItem('group_name');
 function deletion(id) {
     var id = id;
     var element = document.getElementById(id);
