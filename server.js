@@ -164,6 +164,23 @@ app.post('/listgroups', urlencodedParser, function(req, res){
 	})
 	//}
 })
+app.post('/listgroup', urlencodedParser, function(req, res){
+	
+	var user_id = req.body.user_id;
+	var group_name = req.body.group_name;
+	
+	connection.query("SELECT group_id FROM group_members WHERE user_id="+user_id+" AND group_name='"+group_name+"'", function(err, rows, fields){
+		try{
+			values = JSON.parse(JSON.stringify(rows));
+			res.send(values);
+		}catch(err){
+			res.status(400).send(err);
+		}
+		
+		
+	})
+	
+})
 
 /*
 
