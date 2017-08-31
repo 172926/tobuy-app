@@ -492,10 +492,11 @@ app.post('/submitListItems', urlencodedParser, function(req, res){
 app.post('/getItems', urlencodedParser, function(req, res){
 	
 	var list_id = req.body.list_id;
-	
+	console.log(list_id);
 		connection.query("SELECT item_content, active FROM list_items WHERE list_id="+list_id+"", function(err, rows, fields){
 			try{
 				values = JSON.parse(JSON.stringify(rows));
+				console.log("values for " + list_id + ":" + values);
 				res.send(values);
 			}catch(err){console.log(err)}
 			
